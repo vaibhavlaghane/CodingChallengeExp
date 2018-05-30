@@ -32,7 +32,7 @@
 		DC0E5DB720BF0F2200BE3CBE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DB420BF0F2200BE3CBE /* Utility.swift */; };
 		DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */; };
 		DC0E5DBF20BF566600BE3CBE /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DBE20BF566600BE3CBE /* EventDetailsViewController.swift */; };
-		DC0E5DC220BF583600BE3CBE /* EventCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DC120BF583600BE3CBE /* EventCellTableViewCell.swift */; };
+		DC0E5DC220BF583600BE3CBE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DC120BF583600BE3CBE /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		DC0E5DB420BF0F2200BE3CBE /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DC0E5DBE20BF566600BE3CBE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
-		DC0E5DC120BF583600BE3CBE /* EventCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellTableViewCell.swift; sourceTree = "<group>"; };
+		DC0E5DC120BF583600BE3CBE /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +205,7 @@
 		DC0E5DC020BF580F00BE3CBE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DC0E5DC120BF583600BE3CBE /* EventCellTableViewCell.swift */,
+				DC0E5DC120BF583600BE3CBE /* EventCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0E5DC220BF583600BE3CBE /* EventCellTableViewCell.swift in Sources */,
+				DC0E5DC220BF583600BE3CBE /* EventCell.swift in Sources */,
 				DC0E5DAC20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */,
 				DC0E5DA820BF009900BE3CBE /* DataDownloader.swift in Sources */,

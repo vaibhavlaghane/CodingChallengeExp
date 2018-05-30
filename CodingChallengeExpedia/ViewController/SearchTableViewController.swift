@@ -61,7 +61,7 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var  cellP = tableView.dequeueReusableCell(withIdentifier: kshowEventDetailsdentifier, for: indexPath) as? EventCellTableViewCell
+        var  cellP = tableView.dequeueReusableCell(withIdentifier: kshowEventDetailsdentifier, for: indexPath) as? EventCell
         if let cell = cellP {
             
             // Configure the cell...
@@ -72,7 +72,7 @@ class SearchTableViewController: UITableViewController {
             return cell
             
         }
-        cellP = EventCellTableViewCell()
+        cellP = EventCell()
         return cellP!
     }
     

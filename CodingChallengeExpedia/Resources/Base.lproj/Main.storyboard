@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Catalog-->
+        <!--Events-->
         <scene sceneID="PEI-S8-GoN">
             <objects>
-                <tableViewController id="36S-ta-oin" customClass="SearchTableViewController" customModule="CodingChallengeExpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Events" id="36S-ta-oin" customClass="SearchTableViewController" customModule="CodingChallengeExpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Xb-q1-8Df">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                 <color key="backgroundColor" red="0.81179182270000005" green="0.90547128759999995" blue="0.99942404029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.1220130884" green="0.22952118390000001" blue="0.72336632010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="productNameLabel" destination="s9E-jV-TKd" id="naL-br-u2n"/>
+                                    <outlet property="eventLabel" destination="s9E-jV-TKd" id="890-Wh-FGK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,7 +53,7 @@
                             <outlet property="delegate" destination="36S-ta-oin" id="g6B-NG-8ky"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Catalog" id="ZkG-Ip-VD5"/>
+                    <navigationItem key="navigationItem" title="Events" id="ZkG-Ip-VD5"/>
                     <connections>
                         <segue destination="yNc-gJ-xfT" kind="show" identifier="showCollectionView" id="BdL-7l-yu4"/>
                     </connections>
