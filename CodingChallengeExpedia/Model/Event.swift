@@ -9,10 +9,10 @@
 import UIKit
 
 enum ImageDownLoadState:String  {
-    case New
-    case Downloaded
-    case InProgress
-    case Failed
+    case new
+    case downloaded
+    case nnProgress
+    case failed
 }
 
 class Event: NSObject {
@@ -21,8 +21,9 @@ class Event: NSObject {
     var date: Date
     var formattedDate:String?
     var imageData: UIImage?
-    var isImageDownloaded: ImageDownLoadState = .New
+    var isImageDownloaded: ImageDownLoadState = .new
     var imageURL: URL? = nil
+    
     var imagelink: String?{
         didSet{
             if( imagelink != nil ){

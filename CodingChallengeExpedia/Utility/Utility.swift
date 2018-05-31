@@ -8,17 +8,17 @@
 struct  EventDetails{
     static let stats = "stats"
     static let title =  "title"
-     static let url = "url"
-     static let dateTimeLocal = "datetime_local"
-     static let performers = "performers"
-     static let venue = "venue"
-     static let address = "address"
-     static let id = "id"
-     static let shortTitle = "short_title"
-     static let dateTimeUTC = "datetime_utc"
-     static let score = "score"
-     static let taxonomies = "taxonomies"
-     static let type = "type"
+    static let url = "url"
+    static let dateTimeLocal = "datetime_local"
+    static let performers = "performers"
+    static let venue = "venue"
+    static let address = "address"
+    static let id = "id"
+    static let shortTitle = "short_title"
+    static let dateTimeUTC = "datetime_utc"
+    static let score = "score"
+    static let taxonomies = "taxonomies"
+    static let type = "type"
 }
 
 
@@ -85,39 +85,32 @@ class Utility: NSObject {
     static func parseJSON(dict: Dictionary<String, Any>?)-> [Event] {
         guard let jsonDict   = dict  else{return [] }
         guard let eventArr = jsonDict["events"] as? Array<Any?> else {return  [] }
-        
-      
         var events = [Event]()
         
         for (_,element) in eventArr.enumerated(){
-            
-            if  let prd = element as? Dictionary< String, Any>{
-//
-//                let productID = prd["productId"] ?? ""
-//                let productName = prd["productName"] ?? ""
-//                let shortDescription = prd["shortDescription"] ?? ""
-//                let longDescription = prd["longDescription"] ?? ""
-//                let price = prd["price"] ?? ""
-//                let productImage = prd["productImage"] ?? ""
-//                let reviewRating = prd["reviewRating"] ?? 0
-//                let reviewCount = prd["reviewCount"] ?? 0
-//                let inStock = prd["inStock"] ?? false
-                
-//                let product = Product(productId:productID as? String  ,
-//                                      productName: productName  as? String ,
-//                                      shortDescription: shortDescription as? String ,
-//                                      longDescription: longDescription as? String ,
-//                                      price: price as? String ,
-//                                      imagelink: productImage as? String ,
-//                                      reviewRating: reviewRating  as? Int,
-//                                      reviewCount: reviewCount as? Int,
-//                                      inStock: inStock  as? Bool)
-//
-//                products.append(product)
-//
+            if  let event = element as? Dictionary< String, Any?>{
+//                let performers = event[EventDetails.performers] ?? ""
+//                let venue = event[EventDetails.venue] ?? ""
+//                let address = event[EventDetails.address] ?? ""
+//                let id = event[EventDetails.id] ?? ""
+//                let shortTitle = event[EventDetails.shortTitle] ?? ""
+                let dateTimeUTC : String = event[EventDetails.dateTimeUTC] as! String
+//                let score = event[EventDetails.score] ?? ""
+//                let taxonomies = event[EventDetails.taxonomies] ?? ""
+//                let type = event[EventDetails.type] ?? ""
+                let venueDict : Dictionary<String, Any > = event[EventDetails.venue] as! Dictionary<String, Any>
+               // let locationDict: Dictionary<String, Any> = venueDict[ Venue.location ] as! Dictionary<String, Any>;
+                let city: String = venueDict[ Venue.city]   as! String
+                let state : String  = venueDict[Venue.state]  as! String
+               // let country: String = venueDict[Venue.country]  as!  String
+               // let stats = event[EventDetails.stats] ?? ""
+                let title = event[EventDetails.title]  as! String
+                let url:String  = event[EventDetails.url] as! String
+                let location = city + "," + state
+                let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: url)
+                events.append(eventD)
             }
         }
-        
         return events
     }
     

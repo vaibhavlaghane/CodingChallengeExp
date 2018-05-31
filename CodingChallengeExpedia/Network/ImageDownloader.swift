@@ -25,18 +25,18 @@ class ImageDownloader: Operation {
         if let imgURL = self.event.imageURL{
             imageData =   try? Data(contentsOf: imgURL)
         }else{
-            event.isImageDownloaded = .Failed
+            event.isImageDownloaded = .failed
             return
             //log - imageURL is nil, cannot download the image
         }
         
         if imageData != nil {
             self.event.imageData = UIImage(data:imageData!)
-            self.event.isImageDownloaded = .Downloaded
+            self.event.isImageDownloaded = .downloaded
         }
         else
         {
-            self.event.isImageDownloaded = .Failed
+            self.event.isImageDownloaded = .failed
             self.event.imageData = UIImage(named: "Failed")
         }
     }

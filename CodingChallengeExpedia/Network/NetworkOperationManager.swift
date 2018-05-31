@@ -56,7 +56,7 @@ class NetworkOperationManager: NSObject {
     ///   - index: index of event
     func startOperationsEvent(event: Event, index: Int){
         switch (event.isImageDownloaded) {
-        case .New:
+        case .new:
             startDownloadImage(event: event, index: index)
         default:
             NSLog("do nothing")//buble error up ?

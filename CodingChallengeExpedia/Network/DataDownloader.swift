@@ -68,6 +68,9 @@ class DataDownloader: NSObject {
                     print("Could not serialize")
                     completion(nil)
                 }
+            }else if(error != nil )
+            {
+                failure(nil, error! );
             }
             }.resume()
     }
