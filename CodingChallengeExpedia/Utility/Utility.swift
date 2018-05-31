@@ -5,6 +5,74 @@
 //  Created by Vaibhav N Laghane on 5/30/18.
 //  Copyright © 2018 TestExpedia. All rights reserved.
 //
+struct  EventDetails{
+    static let stats = "stats"
+    static let title =  "title"
+     static let url = "url"
+     static let dateTimeLocal = "datetime_local"
+     static let performers = "performers"
+     static let venue = "venue"
+     static let address = "address"
+     static let id = "id"
+     static let shortTitle = "short_title"
+     static let dateTimeUTC = "datetime_utc"
+     static let score = "score"
+     static let taxonomies = "taxonomies"
+     static let type = "type"
+}
+
+
+struct  Venue{
+     static let  city = "city"
+     static let  name = "name"
+     static let  extendedAddress = "extended_address"
+     static let  url = "url"
+     static let  country = "country"
+     static let  state = "state"
+     static let  score = "score"
+     static let  postalCode = "postal_code"
+     static let  location = "location"
+     static let address = "address"
+     static let id = "id"
+}
+
+struct Location{
+    static let lat = "lat"
+    static let lon = "lon"
+}
+
+struct  Stats {
+     static let  listingCount        =  "listing_count"
+     static let  averagePrice      = "average_price"
+     static let  lowestPrice         = "lowest_price"
+     static let  highestPrice       = "highest_price"
+}
+
+struct Performer{
+    static let  name        =  "name"
+    static let  shortName =   "short_name"
+    static let  url = "url"
+    static let  image = "image"
+    static let  images =  "images"
+    static let  primary = "primary"
+    static let  id = "id"
+    static let  score = "score"
+    static let  type = "type"
+    static let  slug = "slug"
+}
+
+struct Images {
+     static let  large = "large"
+     static let  huge = "huge"
+     static let  small = "small"
+     static let  medium = "medium"
+}
+
+struct Taxonomies{
+    static let parentID = "parent_id"
+    static let id = "id"
+    static let name = "name"
+}
 
 import UIKit
 

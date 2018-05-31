@@ -13,15 +13,24 @@
         <!--Events-->
         <scene sceneID="PEI-S8-GoN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HoD-3j-AJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Events" id="36S-ta-oin" customClass="SearchTableViewController" customModule="CodingChallengeExpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Xb-q1-8Df">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95308906169999996" green="0.94309035549999998" blue="0.99942404029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="dUN-tB-6dB">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="0Xb-q1-8Df" id="XOg-L5-lZ5"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kEventCell" rowHeight="50" id="7ed-jm-iwo" customClass="EventCellTableViewCell" customModule="CodingChallengeExpedia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ed-jm-iwo" id="2i0-jt-x5q">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -41,8 +50,7 @@
                                         <constraint firstAttribute="trailing" secondItem="s9E-jV-TKd" secondAttribute="trailing" id="trr-5U-GJx"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.81179182270000005" green="0.90547128759999995" blue="0.99942404029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.1220130884" green="0.22952118390000001" blue="0.72336632010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="eventLabel" destination="s9E-jV-TKd" id="890-Wh-FGK"/>
                                 </connections>
@@ -55,10 +63,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="ZkG-Ip-VD5"/>
                     <connections>
+                        <outlet property="searchEvents" destination="dUN-tB-6dB" id="iIu-et-hix"/>
                         <segue destination="yNc-gJ-xfT" kind="show" identifier="showCollectionView" id="BdL-7l-yu4"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HoD-3j-AJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="788" y="704.18719211822668"/>
         </scene>

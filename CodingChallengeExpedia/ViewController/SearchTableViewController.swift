@@ -21,7 +21,8 @@ let kshowEventDetailsdentifier = "showEventDetails"
 //static let MAXPAGENUMBER = 30
 
 class SearchTableViewController: UITableViewController {
-
+    @IBOutlet weak var searchEvents: UISearchBar!
+    
     var eventList = [Event]()
     @objc var netOp = NetworkOperationManager()
     var pageNumber = 1;
@@ -42,6 +43,8 @@ class SearchTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 55.0;
      
     }
+ 
+ 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -99,6 +102,38 @@ class SearchTableViewController: UITableViewController {
     deinit {
         removeObserver(self, forKeyPath: "products")
     }
+
+    
+// mark - search field delegate methods
+    func searchBarShouldBeginEditing()->ObjCBool  {
+        return true;
+    
+    }
+//    - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+//    return  YES  ;
+//    }
+//
+//    - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+//    //when enter is pressed in keyboarb --- start the data search operation
+//    [_searchBar resignFirstResponder ];
+//    if (searchBar.text != nil  ) {
+//    if (dataTask != nil) {
+//    [dataTask cancel];
+//    
+//    }
+//    NSCharacterSet * expectedCharSet = [NSCharacterSet  URLQueryAllowedCharacterSet];
+//    NSString* searchTerm = [searchBar.text stringByAddingPercentEncodingWithAllowedCharacters:expectedCharSet ];
+//    NSString* url = [  @"https://itunes.apple.com/search?term=" stringByAppendingString:searchTerm ];
+//    //call the API to search the entered track name
+//    [self downloadJSONData:url];
+//    //@synchronized (tracksArray) {
+//    if(tracksArray){
+//    //Once json is download - we have retrieved the file details and url paths for images - download the images/posters
+//    [self downloadImages:tracksArray];
+//    }
+//    //}
+//    }
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
