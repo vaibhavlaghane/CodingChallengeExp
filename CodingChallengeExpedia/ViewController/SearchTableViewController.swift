@@ -14,11 +14,10 @@ let kshowEventDetailsdentifier = "showEventDetails"
 //let kshowProductDetailsCollectiondentifier = "showProductDetailsCollection"
 //let kproductDetailViewControllerIdentifier = "productDetailViewControllerID"
 //let kProductChildViewControllerNibName = "ProductChildViewController"
-
-
-
 //static let MAXPAGENUMBER = 30
 //static let MAXPAGENUMBER = 30
+
+let eventCell  = "EventCell"
 
 class SearchTableViewController: UITableViewController {
     @IBOutlet weak var searchEvents: UISearchBar!
@@ -30,7 +29,6 @@ class SearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         netOp.downloadData(pageNumber: pageNumber, pageSize: pageSize) { (products) in
             self.eventList = self.netOp.events
             self.pageNumber = self.pageNumber + self.pageSize ;
@@ -41,18 +39,16 @@ class SearchTableViewController: UITableViewController {
         eventList = netOp.events
         self.tableView.estimatedRowHeight =   UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 55.0;
-     
+        
+       // tableView.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
     }
- 
- 
-    
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -64,16 +60,14 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var  cellP = tableView.dequeueReusableCell(withIdentifier: kshowEventDetailsdentifier, for: indexPath) as? EventCell
+        var  cellP = tableView.dequeueReusableCell(withIdentifier: kEventCellIdentifier, for: indexPath) as? EventCell
         if let cell = cellP {
-            
             // Configure the cell...
             if (indexPath.row < eventList.count){
-                let prd = eventList[indexPath.row]
-                cell.nameLabel.text = prd.name
+                let evnt: Event = eventList[indexPath.row]
+                cell.eventLabel.text = evnt.name ?? ""
             }
             return cell
-            
         }
         cellP = EventCell()
         return cellP!
@@ -87,27 +81,21 @@ class SearchTableViewController: UITableViewController {
      MARK: - Navigation
      In a storyboard-based application, you will often want to do a little preparation before navigation  */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if (segue.identifier == kshowEventDetailsdentifier){
-            
             let destViewController                  =   segue.destination as! EventDetailsViewController
             let indexPath = sender as? IndexPath
 //            destViewController.product           =   catalogList[(indexPath?.row)!]
 //            destViewController.productsList = catalogList
-            
         }
     }
-    
     
     deinit {
         removeObserver(self, forKeyPath: "products")
     }
-
     
 // mark - search field delegate methods
     func searchBarShouldBeginEditing()->ObjCBool  {
         return true;
-    
     }
 //    - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
 //    return  YES  ;
@@ -119,7 +107,7 @@ class SearchTableViewController: UITableViewController {
 //    if (searchBar.text != nil  ) {
 //    if (dataTask != nil) {
 //    [dataTask cancel];
-//    
+//
 //    }
 //    NSCharacterSet * expectedCharSet = [NSCharacterSet  URLQueryAllowedCharacterSet];
 //    NSString* searchTerm = [searchBar.text stringByAddingPercentEncodingWithAllowedCharacters:expectedCharSet ];

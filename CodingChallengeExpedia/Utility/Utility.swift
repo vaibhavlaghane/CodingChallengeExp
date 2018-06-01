@@ -94,18 +94,18 @@ class Utility: NSObject {
 //                let address = event[EventDetails.address] ?? ""
 //                let id = event[EventDetails.id] ?? ""
 //                let shortTitle = event[EventDetails.shortTitle] ?? ""
-                let dateTimeUTC : String = event[EventDetails.dateTimeUTC] as! String
+                let dateTimeUTC : String = event[EventDetails.dateTimeUTC] as? String ?? ""
 //                let score = event[EventDetails.score] ?? ""
 //                let taxonomies = event[EventDetails.taxonomies] ?? ""
 //                let type = event[EventDetails.type] ?? ""
                 let venueDict : Dictionary<String, Any > = event[EventDetails.venue] as! Dictionary<String, Any>
                // let locationDict: Dictionary<String, Any> = venueDict[ Venue.location ] as! Dictionary<String, Any>;
-                let city: String = venueDict[ Venue.city]   as! String
-                let state : String  = venueDict[Venue.state]  as! String
+                let city: String = venueDict[ Venue.city]   as? String ?? ""
+                let state : String  = venueDict[Venue.state]  as? String ?? ""
                // let country: String = venueDict[Venue.country]  as!  String
                // let stats = event[EventDetails.stats] ?? ""
-                let title = event[EventDetails.title]  as! String
-                let url:String  = event[EventDetails.url] as! String
+                let title = event[EventDetails.title]  as? String ?? ""
+                let url:String  = event[EventDetails.url] as? String ?? ""
                 let location = city + "," + state
                 let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: url)
                 events.append(eventD)

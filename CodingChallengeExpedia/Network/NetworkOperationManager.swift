@@ -32,12 +32,9 @@ class NetworkOperationManager: NSObject {
     ///   - completion: completion block
     func downloadData( pageNumber: Int,pageSize: Int,  completion: @escaping ([Event]? ) -> Void )->Void{
         downloader.getJSONData(pageNumber: pageNumber, pageSize: pageSize, completion: { (dict) in
-            
             let eventList = Utility.parseJSON(dict: dict)
             self.events.append(contentsOf:eventList  )
-            
             completion(eventList)
-            
             for (index, element) in self.events.enumerated(){
                 self.startDownloadImage(event: element, index: index )
             }
@@ -59,7 +56,7 @@ class NetworkOperationManager: NSObject {
         case .new:
             startDownloadImage(event: event, index: index)
         default:
-            NSLog("do nothing")//buble error up ?
+            NSLog("do nothing")
         }
     }
     

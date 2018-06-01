@@ -15,29 +15,25 @@ struct Constants {
        // https://api.seatgeek.com/2/venues?
         static let APIScheme = "https"
         static let APIHost = "api.seatgeek.com"
-        static let APIPath = "/events"
+        static let APIPath = "/2/events"
+        static let queryClientId = "client_id"
         static let APIKey = "b698e0a86dc6ed97744c480bfb558b6c3fb04d06081502905472255561d5af9c"
         static let CLIENTID = "MTE3NTYyOTV8MTUyNzY5Njg4Mi45Mg"
+        static let perPage = "per_page="
+        static let page = "page="
+        static let and = "&"
+        static let q = "?"
     }
 }
 
-enum EndPoints:String  {
-    case Events  = "events"
-    case Perfomers = "performers"
-    case Venues = "venues"
-    case None = ""
+struct EndPoints  {
+    static let  Events  = "events"
+    static let  Perfomers = "performers"
+    static let  Venues = "venues"
+    static let  None = ""
 }
 
-//enum EndPoints{
-// events =  "/events"
-///events/{EVENT_ID}
-///performers
-///performers/{PERFORMER_ID}
-///venues
-///venues/{VENUE_ID}
-//}
 class DataDownloader: NSObject {
-
     /// function call to get JSON data
     /// completion block handles the received JSON
     /// - Returns: none
@@ -81,10 +77,13 @@ class DataDownloader: NSObject {
     ///   - pageNumber: page number
     /// - Returns: url
     internal func createURLFromParameters(_ pageSize:  String, _ pageNumber: String ) -> URL {
+ 
         var components      = URLComponents()
         components.scheme   = Constants.APIDetails.APIScheme
         components.host     = Constants.APIDetails.APIHost
-        components.path     = Constants.APIDetails.APIPath + "\(Constants.APIDetails.APIKey)" + "/\(pageNumber)" + "/\(pageSize)/" ;
+        components.path     = Constants.APIDetails.APIPath
+        components.query   = Constants.APIDetails.queryClientId + "=" + Constants.APIDetails.CLIENTID
+        //components.path     = Constants.APIDetails.APIPath + "\(Constants.APIDetails.APIKey)" + "/\(pageNumber)" + "/\(pageSize)/" ;
         
         return components.url!
     }

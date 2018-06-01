@@ -29,7 +29,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kEventCell" rowHeight="50" id="7ed-jm-iwo" customClass="EventCellTableViewCell" customModule="CodingChallengeExpedia" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kEventCell" rowHeight="50" id="7ed-jm-iwo" customClass="EventCell" customModule="CodingChallengeExpedia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ed-jm-iwo" id="2i0-jt-x5q">
