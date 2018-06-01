@@ -19,7 +19,7 @@ let kshowEventDetailsdentifier = "showEventDetails"
 
 let eventCell  = "EventCell"
 
-class SearchTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController , UISearchBarDelegate{
     @IBOutlet weak var searchEvents: UISearchBar!
     
     var eventList = [Event]()
@@ -84,8 +84,8 @@ class SearchTableViewController: UITableViewController {
         if (segue.identifier == kshowEventDetailsdentifier){
             let destViewController                  =   segue.destination as! EventDetailsViewController
             let indexPath = sender as? IndexPath
-//            destViewController.product           =   catalogList[(indexPath?.row)!]
-//            destViewController.productsList = catalogList
+//             destViewController.product           =   catalogList[(indexPath?.row)!]
+//             destViewController.productsList = catalogList
         }
     }
     
@@ -97,9 +97,30 @@ class SearchTableViewController: UITableViewController {
     func searchBarShouldBeginEditing()->ObjCBool  {
         return true;
     }
-//    - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-//    return  YES  ;
-//    }
+    
+
+    
+     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        return false;
+    }// return NO to not become first responder
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       // <#code#>
+    }
+//    @available(iOS 2.0, *)
+//    optional public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) // called when text starts editing
+//
+//    @available(iOS 2.0, *)
+//    optional public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool // return NO to not resign first responder
+//
+//    @available(iOS 2.0, *)
+//    optional public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) // called when text ends editing
+//
+//    @available(iOS 2.0, *)
+//    optional public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) // called when text changes (including clear)
+//
+//    @available(iOS 3.0, *)
+//    optional public func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool // called before text changes
 //
 //    - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 //    //when enter is pressed in keyboarb --- start the data search operation
