@@ -9,7 +9,6 @@
 import UIKit
 
 class ImageDownloader: Operation {
-
     var  event: Event
     var  imageData: Data? = nil
     
@@ -21,7 +20,6 @@ class ImageDownloader: Operation {
         if self.isCancelled   {
             return
         }
-        
         if let imgURL = self.event.imageURL{
             imageData =   try? Data(contentsOf: imgURL)
         }else{
@@ -29,7 +27,6 @@ class ImageDownloader: Operation {
             return
             //log - imageURL is nil, cannot download the image
         }
-        
         if imageData != nil {
             self.event.imageData = UIImage(data:imageData!)
             self.event.isImageDownloaded = .downloaded

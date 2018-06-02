@@ -19,8 +19,15 @@ class EventDetailsViewController: UIViewController {
     }
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        self.parent?.removeFromParentViewController()
+       
+        let transition = CATransition()
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        self.view.layer.add(transition, forKey: nil)
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+        
+//        self.parent?.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var backButton: UIButton!
     

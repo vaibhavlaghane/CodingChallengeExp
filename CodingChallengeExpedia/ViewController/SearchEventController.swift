@@ -12,9 +12,45 @@ let kEventCellIdentifier = "kEventTableViewCell"
 let kshowEventDetailsdentifier = "showEventDetails"
 let eventCell  = "EventTableViewCell"
 
+
+extension UIViewController {
+    func configureChildViewController(childController: UIViewController, onView: UIView?) {
+        var holderView = self.view
+        if let onView = onView {
+            holderView = onView
+        }
+        addChildViewController(childController)
+        
+        let transition = CATransition()
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        self.view.layer.add(transition, forKey: nil)
+        
+        holderView?.addSubview(childController.view)
+        constrainViewEqual(holderView: holderView!, view: childController.view)
+        childController.didMove(toParentViewController: self)
+        childController.willMove(toParentViewController: self)
+    }
+    
+    
+    func constrainViewEqual(holderView: UIView, view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        //pin 100 points from the top of the super
+        let pinTop = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal,
+                                        toItem: holderView, attribute: .top, multiplier: 1.0, constant: 0)
+        let pinBottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal,
+                                           toItem: holderView, attribute: .bottom, multiplier: 1.0, constant: 0)
+        let pinLeft = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal,
+                                         toItem: holderView, attribute: .left, multiplier: 1.0, constant: 0)
+        let pinRight = NSLayoutConstraint(item: view, attribute: .right, relatedBy: .equal,
+                                          toItem: holderView, attribute: .right, multiplier: 1.0, constant: 0)
+        
+        holderView.addConstraints([pinTop, pinBottom, pinLeft, pinRight])
+    }
+    
+}
 class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
-    
-    
+
     @IBOutlet weak var eventsTable: UITableView!
     @IBOutlet weak var searchEventsBar: UISearchBar!
     
@@ -41,7 +77,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         }
         eventList = netOp.events
         searchEventList = eventList
-        detailsScrVC.view.frame = self.view.frame
+       // detailsScrVC.view.frame = self.view.frame
         // Do any additional setup after loading the view.
           eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
     }
@@ -81,11 +117,10 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       //  self.performSegue(withIdentifier: kshowEventDetailsdentifier, sender: indexPath);
         
-        let transition = CATransition()
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        self.view.layer.add(transition, forKey: nil)
-        self.view.addSubview(detailsScrVC.view)
+     
+        //self.view.addSubview(detailsScrVC.view)
+        
+        self.configureChildViewController(childController: detailsScrVC, onView: self.view)
     }
     
     
