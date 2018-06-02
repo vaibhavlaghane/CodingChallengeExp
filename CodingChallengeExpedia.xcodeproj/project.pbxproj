@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC0E5D7120BEACB200BE3CBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5D7020BEACB200BE3CBE /* AppDelegate.swift */; };
-		DC0E5D7320BEACB200BE3CBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5D7220BEACB200BE3CBE /* ViewController.swift */; };
 		DC0E5D7620BEACB200BE3CBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5D7420BEACB200BE3CBE /* Main.storyboard */; };
 		DC0E5D7920BEACB200BE3CBE /* CodingChallengeExpedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5D7720BEACB200BE3CBE /* CodingChallengeExpedia.xcdatamodeld */; };
 		DC0E5D7B20BEACB500BE3CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0E5D7A20BEACB500BE3CBE /* Assets.xcassets */; };
@@ -30,9 +29,6 @@
 		DC0E5DB520BF0F2200BE3CBE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DB420BF0F2200BE3CBE /* Utility.swift */; };
 		DC0E5DB620BF0F2200BE3CBE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DB420BF0F2200BE3CBE /* Utility.swift */; };
 		DC0E5DB720BF0F2200BE3CBE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DB420BF0F2200BE3CBE /* Utility.swift */; };
-		DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */; };
-		DC0E5DBF20BF566600BE3CBE /* EventDetailsViewControllerbk.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DBE20BF566600BE3CBE /* EventDetailsViewControllerbk.swift */; };
-		DC0E5DC220BF583600BE3CBE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DC120BF583600BE3CBE /* EventCell.swift */; };
 		DC1812D820C2699F00C24C68 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */; };
 		DC1812D920C2699F00C24C68 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */; };
 		DC1812DA20C2699F00C24C68 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */; };
@@ -45,9 +41,6 @@
 		DC1812E420C27BB100C24C68 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1812E320C27BB100C24C68 /* backButton.png */; };
 		DC1812E520C27BB100C24C68 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1812E320C27BB100C24C68 /* backButton.png */; };
 		DC1812E620C27BB100C24C68 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1812E320C27BB100C24C68 /* backButton.png */; };
-		DC1812E820C27C1900C24C68 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1812E720C27C1800C24C68 /* favorite.png */; };
-		DC1812E920C27C1900C24C68 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1812E720C27C1800C24C68 /* favorite.png */; };
-		DC1812EA20C27C1900C24C68 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1812E720C27C1800C24C68 /* favorite.png */; };
 		DC1812F520C2828600C24C68 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */; };
 		DC1812F620C2828600C24C68 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */; };
 		DC1812F720C2828600C24C68 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */; };
@@ -79,7 +72,6 @@
 /* Begin PBXFileReference section */
 		DC0E5D6D20BEACB200BE3CBE /* CodingChallengeExpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallengeExpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0E5D7020BEACB200BE3CBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC0E5D7220BEACB200BE3CBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC0E5D7520BEACB200BE3CBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC0E5D7820BEACB200BE3CBE /* CodingChallengeExpedia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodingChallengeExpedia.xcdatamodel; sourceTree = "<group>"; };
 		DC0E5D7A20BEACB500BE3CBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,14 +88,10 @@
 		DC0E5DAB20BF00B900BE3CBE /* NetworkOperationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationManager.swift; sourceTree = "<group>"; };
 		DC0E5DAF20BF00CE00BE3CBE /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		DC0E5DB420BF0F2200BE3CBE /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		DC0E5DBE20BF566600BE3CBE /* EventDetailsViewControllerbk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewControllerbk.swift; sourceTree = "<group>"; };
-		DC0E5DC120BF583600BE3CBE /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventController.swift; sourceTree = "<group>"; };
 		DC1812E320C27BB100C24C68 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
-		DC1812E720C27C1800C24C68 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
 		DC1812FC20C2DB6600C24C68 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
@@ -228,7 +216,6 @@
 		DC0E5DB920BF4E3900BE3CBE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DC1812FB20C2849D00C24C68 /* backup */,
 				DC0E5DC020BF580F00BE3CBE /* Cells */,
 				DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */,
 				DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */,
@@ -240,7 +227,6 @@
 		DC0E5DC020BF580F00BE3CBE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				DC0E5DC120BF583600BE3CBE /* EventCell.swift */,
 				DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */,
 				DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */,
 			);
@@ -250,20 +236,9 @@
 		DC1812E220C27B9300C24C68 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DC1812E720C27C1800C24C68 /* favorite.png */,
 				DC1812E320C27BB100C24C68 /* backButton.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		DC1812FB20C2849D00C24C68 /* backup */ = {
-			isa = PBXGroup;
-			children = (
-				DC0E5D7220BEACB200BE3CBE /* ViewController.swift */,
-				DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */,
-				DC0E5DBE20BF566600BE3CBE /* EventDetailsViewControllerbk.swift */,
-			);
-			path = backup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,7 +349,6 @@
 				DC0E5D7E20BEACB500BE3CBE /* LaunchScreen.storyboard in Resources */,
 				DC1812F820C2828600C24C68 /* EventDetailsViewController.xib in Resources */,
 				DC0E5D7B20BEACB500BE3CBE /* Assets.xcassets in Resources */,
-				DC1812E820C27C1900C24C68 /* favorite.png in Resources */,
 				DC1812E420C27BB100C24C68 /* backButton.png in Resources */,
 				DC0E5D7620BEACB200BE3CBE /* Main.storyboard in Resources */,
 			);
@@ -384,7 +358,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1812E920C27C1900C24C68 /* favorite.png in Resources */,
 				DC1812DC20C2699F00C24C68 /* EventTableViewCell.xib in Resources */,
 				DC1812F920C2828600C24C68 /* EventDetailsViewController.xib in Resources */,
 				DC1812E520C27BB100C24C68 /* backButton.png in Resources */,
@@ -395,7 +368,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1812EA20C27C1900C24C68 /* favorite.png in Resources */,
 				DC1812DD20C2699F00C24C68 /* EventTableViewCell.xib in Resources */,
 				DC1812FA20C2828600C24C68 /* EventDetailsViewController.xib in Resources */,
 				DC1812E620C27BB100C24C68 /* backButton.png in Resources */,
@@ -410,9 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1812D820C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
-				DC0E5DC220BF583600BE3CBE /* EventCell.swift in Sources */,
 				DC0E5DAC20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
-				DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */,
 				DC0E5DA820BF009900BE3CBE /* DataDownloader.swift in Sources */,
 				DC1812FD20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC1812F520C2828600C24C68 /* EventDetailsViewController.swift in Sources */,
@@ -420,8 +390,6 @@
 				DC0E5DB020BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
 				DC0E5DA420BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB520BF0F2200BE3CBE /* Utility.swift in Sources */,
-				DC0E5DBF20BF566600BE3CBE /* EventDetailsViewControllerbk.swift in Sources */,
-				DC0E5D7320BEACB200BE3CBE /* ViewController.swift in Sources */,
 				DC0E5D7920BEACB200BE3CBE /* CodingChallengeExpedia.xcdatamodeld in Sources */,
 				DC0E5D7120BEACB200BE3CBE /* AppDelegate.swift in Sources */,
 			);

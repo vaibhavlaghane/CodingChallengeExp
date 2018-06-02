@@ -14,6 +14,9 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var favoriteButton: HeartButton!
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    
     @IBAction func favoriteButtonClicked(_ sender: Any) {
         if(!favoriteButton.filled){
             favoriteButton.filled = true
@@ -28,11 +31,10 @@ class EventDetailsViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var eventTitleLabel: UILabel!
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         self.moveView(view: self.view)
     }
-    @IBOutlet weak var backButton: UIButton!
     
     var eventName : String = "" ;
     var date : String = "" ;
@@ -53,9 +55,9 @@ class EventDetailsViewController: UIViewController {
             }
             
         }
-        //let heartButton =  HeartButton(frame: favoriteButton.frame)
-       // favoriteButton = heartButton
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +66,6 @@ class EventDetailsViewController: UIViewController {
     }
     
     func moveView(view: UIView){
-        
         // Notify Child View Controller
         self.willMove(toParentViewController: nil)
         self.beginAppearanceTransition(false, animated: true)
@@ -85,6 +86,14 @@ class EventDetailsViewController: UIViewController {
 //
     }
 
+    //setup parameters of the view 
+    func setupParameters(){
+        eventVenue.text = venue
+        eventDate.text = date
+        eventTitleLabel.text = eventName
+        eventImage.layer.cornerRadius = 0.8
+        
+    }
     /*
     // MARK: - Navigation
 

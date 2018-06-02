@@ -120,9 +120,9 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         detailsScrVC.date = event.formattedDate ?? ""
         detailsScrVC.isFavoriteEvent = false;//
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
+         detailsScrVC.setupParameters() ;
     }
-    
-    
+     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         // <#code#>//    [self.mSearchBar setShowsCancelButton:NO animated:YES];
         //    searchBar.text=@"";
@@ -130,7 +130,6 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText.count > 0) {
-            //searchText =  " "
             searchAutocomplete(searchText)
             eventsTable.reloadData()
         }
@@ -157,22 +156,14 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         for curEvent in eventList
         {
             let eventString:String! = curEvent.name as! String
-            if let substringRange :Range<String.Index> = eventString.range(of: substring){
+            let compareString = eventString.prefix(substring.count)
+            if let substringRange :Range<String.Index> = compareString.range(of: substring){
                 if (!(substringRange.isEmpty) ){searchedArray.append(curEvent)}
             }
         }
         searchEventList.removeAll()
         searchEventList = searchedArray
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }
