@@ -107,6 +107,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 cell.title.text = evnt.name ?? ""
                 cell.venue.text = evnt.location ?? ""
                 cell.date.text = evnt.formattedDate ?? ""
+                
             }
             return cell
         }
@@ -115,10 +116,10 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      //  self.performSegue(withIdentifier: kshowEventDetailsdentifier, sender: indexPath);
-        
-     
-        //self.view.addSubview(detailsScrVC.view)
+        let event = searchEventList[indexPath.row]
+        detailsScrVC.eventName = event.name ?? ""
+        detailsScrVC.venue = event.location ?? ""
+        detailsScrVC.date = event.formattedDate ?? ""
         
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
     }

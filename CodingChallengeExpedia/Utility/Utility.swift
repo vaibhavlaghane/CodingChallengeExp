@@ -89,7 +89,7 @@ class Utility: NSObject {
         
         for (_,element) in eventArr.enumerated(){
             if  let event = element as? Dictionary< String, Any?>{
-//                let performers = event[EventDetails.performers] ?? ""
+                let performers : Array<Dictionary<String, Any>> = event[EventDetails.performers] as! Array<Dictionary<String,Any>>
 //                let venue = event[EventDetails.venue] ?? ""
 //                let address = event[EventDetails.address] ?? ""
 //                let id = event[EventDetails.id] ?? ""
@@ -102,12 +102,19 @@ class Utility: NSObject {
                // let locationDict: Dictionary<String, Any> = venueDict[ Venue.location ] as! Dictionary<String, Any>;
                 let city: String = venueDict[ Venue.city]   as? String ?? ""
                 let state : String  = venueDict[Venue.state]  as? String ?? ""
+                let perDict   = performers[0]
+                var imageURL = ""
+                if( perDict [ Performer.image] != nil && !(perDict[ Performer.image] is NSNull )){
+                if let imageStr: String = perDict[Performer.image]! as! String{
+                    imageURL = imageStr
+                }
+                }
                // let country: String = venueDict[Venue.country]  as!  String
                // let stats = event[EventDetails.stats] ?? ""
                 let title = event[EventDetails.title]  as? String ?? ""
                 let url:String  = event[EventDetails.url] as? String ?? ""
                 let location = city + "," + state
-                let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: url)
+                let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: imageURL)
                 events.append(eventD)
             }
         }

@@ -10,6 +10,9 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
 
+    var eventName : String = "" ;
+    var date : String = "" ;
+    var venue : String  = "" ;
     
     @IBOutlet weak var eventVenue: UILabel!
     @IBOutlet weak var eventDate: UILabel!
@@ -19,21 +22,16 @@ class EventDetailsViewController: UIViewController {
     }
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBAction func backButtonPressed(_ sender: Any) {
-       
-        let transition = CATransition()
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        self.view.layer.add(transition, forKey: nil)
-        self.view.removeFromSuperview()
-        self.removeFromParentViewController()
-        
-//        self.parent?.dismiss(animated: true, completion: nil)
+        self.moveView(view: self.view)
     }
     @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        eventVenue.text = venue
+        eventDate.text = date
+        eventTitleLabel.text = eventName
         // Do any additional setup after loading the view.
     }
 
@@ -42,6 +40,19 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func moveView(view: UIView){
+        let toPoint: CGPoint =  CGPoint(x:  0.0, y: view.frame.size.width)//  CGPointMake(0.0, -10.0)
+        let fromPoint : CGPoint = CGPoint.zero
+        let movement = CABasicAnimation(keyPath: "movement")
+        movement.isAdditive = true
+        movement.fromValue =  NSValue(cgPoint: fromPoint)
+        movement.toValue =  NSValue(cgPoint: toPoint)
+          //view.layer.position = toPoint;
+        movement.duration = 1.5
+        view.layer.add(movement, forKey: "move")
+        //view.layer.ani
+      
+    }
 
     /*
     // MARK: - Navigation
