@@ -10,6 +10,20 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
 
+    
+    @IBOutlet weak var eventVenue: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBAction func favoriteButtonClicked(_ sender: Any) {
+    }
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        self.parent?.removeFromParentViewController()
+    }
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

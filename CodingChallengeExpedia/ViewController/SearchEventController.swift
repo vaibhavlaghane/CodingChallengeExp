@@ -24,13 +24,13 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     var pageNumber = 1;
     var pageSize = 30 ;
     
+    var detailsScrVC = EventDetailsViewController.init(nibName: "EventDetailsViewController", bundle: nil)
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.eventsTable.estimatedRowHeight =   UITableViewAutomaticDimension
         self.eventsTable.estimatedRowHeight = 155.0;
-        
-        
         netOp.downloadData(pageNumber: pageNumber, pageSize: pageSize) { (events) in
             self.eventList = self.netOp.events
             self.searchEventList = self.eventList
@@ -41,6 +41,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         }
         eventList = netOp.events
         searchEventList = eventList
+        detailsScrVC.view.frame = self.view.frame
         // Do any additional setup after loading the view.
           eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
     }
@@ -78,7 +79,13 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: kshowEventDetailsdentifier, sender: indexPath);
+      //  self.performSegue(withIdentifier: kshowEventDetailsdentifier, sender: indexPath);
+        
+        let transition = CATransition()
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        self.view.layer.add(transition, forKey: nil)
+        self.view.addSubview(detailsScrVC.view)
     }
     
     
@@ -106,8 +113,8 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchEventsBar.resignFirstResponder()
-        //        searchedDataArray=dataArray;
-        //        [self.mTableView reloadData];
+                searchEventList = eventList;
+                eventsTable.reloadData()
     }
     
     func searchAutocomplete(_ substring: String)
