@@ -20,7 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLl-wr-xho">
-                        <rect key="frame" x="124" y="85" width="34.5" height="21"/>
+                        <rect key="frame" x="124" y="85" width="306" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="306" id="OpN-WH-ved"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -72,6 +75,7 @@
                     <constraint firstItem="Mdf-f7-mVe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SgW-xj-cSx"/>
                     <constraint firstAttribute="trailing" secondItem="LAb-ut-pWi" secondAttribute="trailing" constant="9" id="h4T-3W-Nov"/>
                     <constraint firstItem="zLl-wr-xho" firstAttribute="leading" secondItem="LAb-ut-pWi" secondAttribute="leading" id="j1c-jL-V99"/>
+                    <constraint firstAttribute="bottom" secondItem="jF3-yK-dRG" secondAttribute="bottom" constant="10.5" id="k94-Gx-q5l"/>
                     <constraint firstItem="Hma-kN-VDM" firstAttribute="leading" secondItem="jF3-yK-dRG" secondAttribute="trailing" constant="8" id="lK8-EV-zDa"/>
                     <constraint firstItem="Hma-kN-VDM" firstAttribute="leading" secondItem="LAb-ut-pWi" secondAttribute="leading" id="ldT-BY-Yze"/>
                     <constraint firstAttribute="bottom" secondItem="jF3-yK-dRG" secondAttribute="bottom" constant="10.5" id="rfw-oY-Ae8"/>

@@ -67,7 +67,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.eventsTable.estimatedRowHeight =   UITableViewAutomaticDimension
-        self.eventsTable.estimatedRowHeight = 155.0;
+        self.eventsTable.estimatedRowHeight = 135.0;
         netOp.downloadData(pageNumber: pageNumber, pageSize: pageSize) { (events) in
             self.eventList = self.netOp.events
             self.searchEventList = self.eventList
