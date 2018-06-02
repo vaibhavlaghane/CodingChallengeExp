@@ -32,6 +32,10 @@ class EventDetailsViewController: UIViewController {
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
+        
+        //var  image = eventImage.view
+        eventImage.layer.cornerRadius = 0.8
+        
         // Do any additional setup after loading the view.
     }
 
