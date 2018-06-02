@@ -2,17 +2,16 @@
 //  EventDetailsViewController.swift
 //  CodingChallengeExpedia
 //
-//  Created by Vaibhav N Laghane on 6/2/18.
+//  Created by Vaibhav N Laghane on 5/30/18.
 //  Copyright © 2018 TestExpedia. All rights reserved.
 //
 
 import UIKit
 
-class EventDetailsViewController: UIViewController {
+class EventDetailsViewControllerbk: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +20,6 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
