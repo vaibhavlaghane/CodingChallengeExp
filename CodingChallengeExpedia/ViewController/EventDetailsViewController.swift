@@ -10,15 +10,23 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
 
-    var eventName : String = "" ;
-    var date : String = "" ;
-    var venue : String  = "" ;
-    
     @IBOutlet weak var eventVenue: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var favoriteButton: HeartButton!
     @IBAction func favoriteButtonClicked(_ sender: Any) {
+        if(!favoriteButton.filled){
+            favoriteButton.filled = true
+            DispatchQueue.main.async {
+                self.favoriteButton.draw(self.favoriteButton.frame)
+            }
+            
+        }else{
+            favoriteButton.filled = false
+            DispatchQueue.main.async {
+                self.favoriteButton.draw(self.favoriteButton.frame)
+            }
+        }
     }
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -26,16 +34,19 @@ class EventDetailsViewController: UIViewController {
     }
     @IBOutlet weak var backButton: UIButton!
     
+    var eventName : String = "" ;
+    var date : String = "" ;
+    var venue : String  = "" ;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
-        
-        //var  image = eventImage.view
         eventImage.layer.cornerRadius = 0.8
         
+        //let heartButton =  HeartButton(frame: favoriteButton.frame)
+       // favoriteButton = heartButton
         // Do any additional setup after loading the view.
     }
 
@@ -51,10 +62,8 @@ class EventDetailsViewController: UIViewController {
         movement.isAdditive = true
         movement.fromValue =  NSValue(cgPoint: fromPoint)
         movement.toValue =  NSValue(cgPoint: toPoint)
-          //view.layer.position = toPoint;
         movement.duration = 1.5
         view.layer.add(movement, forKey: "move")
-        //view.layer.ani
       
     }
 

@@ -54,6 +54,9 @@
 		DC1812F820C2828600C24C68 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */; };
 		DC1812F920C2828600C24C68 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */; };
 		DC1812FA20C2828600C24C68 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */; };
+		DC1812FD20C2DB6600C24C68 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812FC20C2DB6600C24C68 /* HeartButton.swift */; };
+		DC1812FE20C2DB6600C24C68 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812FC20C2DB6600C24C68 /* HeartButton.swift */; };
+		DC1812FF20C2DB6600C24C68 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812FC20C2DB6600C24C68 /* HeartButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,7 @@
 		DC1812E720C27C1800C24C68 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = "<group>"; };
 		DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
+		DC1812FC20C2DB6600C24C68 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				DC0E5DB420BF0F2200BE3CBE /* Utility.swift */,
+				DC1812FC20C2DB6600C24C68 /* HeartButton.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				DC0E5DAC20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */,
 				DC0E5DA820BF009900BE3CBE /* DataDownloader.swift in Sources */,
+				DC1812FD20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC1812F520C2828600C24C68 /* EventDetailsViewController.swift in Sources */,
 				DC1812DF20C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB020BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
@@ -425,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1812FE20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC0E5DA520BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB120BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
 				DC1812E020C26D2F00C24C68 /* SearchEventController.swift in Sources */,
@@ -441,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1812FF20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC0E5DA620BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB220BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
 				DC1812E120C26D2F00C24C68 /* SearchEventController.swift in Sources */,
