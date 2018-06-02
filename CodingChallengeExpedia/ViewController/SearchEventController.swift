@@ -14,13 +14,15 @@ let eventCell  = "EventTableViewCell"
 
 
 extension UIViewController {
+    
+    //convenience method to add a childviewcontroller
     func configureChildViewController(childController: UIViewController, onView: UIView?) {
         var holderView = self.view
         if let onView = onView {
             holderView = onView
         }
         addChildViewController(childController)
-        
+        //slide in the view from right to left
         let transition = CATransition()
         transition.type = kCATransitionPush
         transition.subtype = kCATransitionFromRight
@@ -49,6 +51,7 @@ extension UIViewController {
     }
     
 }
+
 class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var eventsTable: UITableView!
@@ -59,9 +62,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     var searchEventList = [Event]()
     var pageNumber = 1;
     var pageSize = 30 ;
-    
     var detailsScrVC = EventDetailsViewController.init(nibName: "EventDetailsViewController", bundle: nil)
-    
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,9 +78,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         }
         eventList = netOp.events
         searchEventList = eventList
-       // detailsScrVC.view.frame = self.view.frame
-        // Do any additional setup after loading the view.
-          eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
+        eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,7 +106,6 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 cell.title.text = evnt.name ?? ""
                 cell.venue.text = evnt.location ?? ""
                 cell.date.text = evnt.formattedDate ?? ""
-                
             }
             return cell
         }
@@ -120,7 +118,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         detailsScrVC.eventName = event.name ?? ""
         detailsScrVC.venue = event.location ?? ""
         detailsScrVC.date = event.formattedDate ?? ""
-        
+        detailsScrVC.isFavoriteEvent = false;//
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
     }
     
@@ -149,8 +147,8 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchEventsBar.resignFirstResponder()
-                searchEventList = eventList;
-                eventsTable.reloadData()
+        searchEventList = eventList;
+        eventsTable.reloadData()
     }
     
     func searchAutocomplete(_ substring: String)

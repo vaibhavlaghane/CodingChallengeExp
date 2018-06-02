@@ -37,6 +37,7 @@ class EventDetailsViewController: UIViewController {
     var eventName : String = "" ;
     var date : String = "" ;
     var venue : String  = "" ;
+    var isFavoriteEvent = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,13 @@ class EventDetailsViewController: UIViewController {
         eventTitleLabel.text = eventName
         eventImage.layer.cornerRadius = 0.8
         
+        if (isFavoriteEvent){
+            favoriteButton.filled = true
+            DispatchQueue.main.async {
+                self.favoriteButton.draw(self.favoriteButton.frame)
+            }
+            
+        }
         //let heartButton =  HeartButton(frame: favoriteButton.frame)
        // favoriteButton = heartButton
         // Do any additional setup after loading the view.

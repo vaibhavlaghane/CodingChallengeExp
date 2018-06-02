@@ -13,6 +13,9 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var venue: UILabel!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var imageEvent: UIImageView!
+    @IBOutlet weak var favoriteIcon: HeartButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

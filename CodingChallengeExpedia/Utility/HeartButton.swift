@@ -45,28 +45,16 @@ extension UIBezierPath {
     @IBInspectable var strokeColor: UIColor?
     public var  bezierPath: UIBezierPath = UIBezierPath()
     public var isFavorite = false
-//    
-//    public func fillColor(_  color: UIColor){
-//        self.tintColor.setFill()
-//        bezierPath.fill()
-//    }
-//    
-//    public func fillBorder(_  color: UIColor){
-//        bezierPath.fill()
-//    }
-    
+ 
     override func draw(_ rect: CGRect) {
         bezierPath = UIBezierPath(heartIn: self.bounds)
-        
         if self.strokeColor != nil {
             self.strokeColor!.setStroke()
         } else {
             self.tintColor.setStroke()
         }
-        
         bezierPath.lineWidth = self.strokeWidth
         bezierPath.stroke()
-        
         if self.filled {
             self.tintColor.setFill()
             bezierPath.fill()
