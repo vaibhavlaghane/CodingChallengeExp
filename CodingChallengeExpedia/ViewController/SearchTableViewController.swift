@@ -10,36 +10,30 @@ import UIKit
 
 let kEventCellIdentifier = "kEventCell"
 let kshowEventDetailsdentifier = "showEventDetails"
-//let kshowCollectionViewdentifier = "showCollectionView"
-//let kshowProductDetailsCollectiondentifier = "showProductDetailsCollection"
-//let kproductDetailViewControllerIdentifier = "productDetailViewControllerID"
-//let kProductChildViewControllerNibName = "ProductChildViewController"
-//static let MAXPAGENUMBER = 30
-//static let MAXPAGENUMBER = 30
-
 let eventCell  = "EventCell"
 
 class SearchTableViewController: UITableViewController , UISearchBarDelegate{
     @IBOutlet weak var searchEvents: UISearchBar!
-    
-    var eventList = [Event]()
     @objc var netOp = NetworkOperationManager()
+    var eventList = [Event]()
+    var searchEventList = [Event]()
     var pageNumber = 1;
     var pageSize = 30 ;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        netOp.downloadData(pageNumber: pageNumber, pageSize: pageSize) { (products) in
+        netOp.downloadData(pageNumber: pageNumber, pageSize: pageSize) { (events) in
             self.eventList = self.netOp.events
+            self.searchEventList = self.eventList
             self.pageNumber = self.pageNumber + self.pageSize ;
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         eventList = netOp.events
+        searchEventList = eventList
         self.tableView.estimatedRowHeight =   UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 55.0;
-        
        // tableView.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
     }
   
@@ -56,15 +50,15 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return eventList.count
+        return searchEventList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var  cellP = tableView.dequeueReusableCell(withIdentifier: kEventCellIdentifier, for: indexPath) as? EventCell
         if let cell = cellP {
             // Configure the cell...
-            if (indexPath.row < eventList.count){
-                let evnt: Event = eventList[indexPath.row]
+            if (indexPath.row < searchEventList.count){
+                let evnt: Event = searchEventList[indexPath.row]
                 cell.eventLabel.text = evnt.name ?? ""
             }
             return cell
@@ -90,105 +84,51 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
     }
     
     deinit {
-        removeObserver(self, forKeyPath: "products")
+        //removeObserver(self, forKeyPath: "products")
     }
-    
-// mark - search field delegate methods
-    func searchBarShouldBeginEditing()->ObjCBool  {
-        return true;
-    }
-    
-
-    
-     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        return false;
-    }// return NO to not become first responder
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-       // <#code#>
+        // <#code#>//    [self.mSearchBar setShowsCancelButton:NO animated:YES];
+        //    searchBar.text=@"";
     }
-//    @available(iOS 2.0, *)
-//    optional public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) // called when text starts editing
-//
-//    @available(iOS 2.0, *)
-//    optional public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool // return NO to not resign first responder
-//
-//    @available(iOS 2.0, *)
-//    optional public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) // called when text ends editing
-//
-//    @available(iOS 2.0, *)
-//    optional public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) // called when text changes (including clear)
-//
-//    @available(iOS 3.0, *)
-//    optional public func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool // called before text changes
-//
-//    - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-//    //when enter is pressed in keyboarb --- start the data search operation
-//    [_searchBar resignFirstResponder ];
-//    if (searchBar.text != nil  ) {
-//    if (dataTask != nil) {
-//    [dataTask cancel];
-//
-//    }
-//    NSCharacterSet * expectedCharSet = [NSCharacterSet  URLQueryAllowedCharacterSet];
-//    NSString* searchTerm = [searchBar.text stringByAddingPercentEncodingWithAllowedCharacters:expectedCharSet ];
-//    NSString* url = [  @"https://itunes.apple.com/search?term=" stringByAppendingString:searchTerm ];
-//    //call the API to search the entered track name
-//    [self downloadJSONData:url];
-//    //@synchronized (tracksArray) {
-//    if(tracksArray){
-//    //Once json is download - we have retrieved the file details and url paths for images - download the images/posters
-//    [self downloadImages:tracksArray];
-//    }
-//    //}
-//    }
-//    }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.count > 0) {
+            //searchText =  " "
+            searchAutocomplete(searchText)
+            self.tableView.reloadData()
+        }
+        else
+        {
+            searchEventList = eventList;
+            self.tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchEvents.resignFirstResponder()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchEvents.resignFirstResponder()
+//        searchedDataArray=dataArray;
+//        [self.mTableView reloadData];
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+ 
+    func searchAutocomplete(_ substring: String)
+    {
+        var searchedArray  = [Event]()
+        for curEvent in eventList
+        {
+            let eventString:String! = curEvent.name as! String
+            if let substringRange :Range<String.Index> = eventString.range(of: substring){
+                if (!(substringRange.isEmpty) ){searchedArray.append(curEvent)}
+            }
+        }
+        searchEventList.removeAll()
+        searchEventList = searchedArray
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+  
     /*
     // MARK: - Navigation
 
