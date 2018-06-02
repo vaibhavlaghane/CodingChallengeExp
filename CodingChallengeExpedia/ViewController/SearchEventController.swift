@@ -12,9 +12,7 @@ let kEventCellIdentifier = "kEventTableViewCell"
 let kshowEventDetailsdentifier = "showEventDetails"
 let eventCell  = "EventTableViewCell"
 
-
 extension UIViewController {
-    
     //convenience method to add a childviewcontroller
     func configureChildViewController(childController: UIViewController, onView: UIView?) {
         var holderView = self.view
@@ -46,7 +44,6 @@ extension UIViewController {
                                          toItem: holderView, attribute: .left, multiplier: 1.0, constant: 0)
         let pinRight = NSLayoutConstraint(item: view, attribute: .right, relatedBy: .equal,
                                           toItem: holderView, attribute: .right, multiplier: 1.0, constant: 0)
-        
         holderView.addConstraints([pinTop, pinBottom, pinLeft, pinRight])
     }
     
@@ -155,15 +152,17 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         var searchedArray  = [Event]()
         for curEvent in eventList
         {
-            let eventString:String! = curEvent.name as! String
+            let eventString:String = curEvent.name as! String 
             let compareString = eventString.prefix(substring.count)
             if let substringRange :Range<String.Index> = compareString.range(of: substring){
                 if (!(substringRange.isEmpty) ){searchedArray.append(curEvent)}
             }
         }
         searchEventList.removeAll()
+    //  searchedArray.sort { (e1, e2) -> Bool in
+    //     UIContentSizeCategory(rawValue: e1.name!) > UIContentSizeCategory(rawValue: e2.name!)
+    // }
         searchEventList = searchedArray
     }
  
-
 }

@@ -16,15 +16,16 @@ enum ImageDownLoadState:String  {
 }
 
 class Event: NSObject {
-    var name: String?
-    var location:String?
-    var date: Date
-    var formattedDate:String?
+
+    public private(set) var name: String?
+    public private(set) var location:String?
+    public private(set) var date: Date
+    public private(set) var formattedDate:String?
     var imageData: UIImage?
     var isImageDownloaded: ImageDownLoadState = .new
-    var imageURL: URL? = nil
+    public private(set) var imageURL: URL? = nil
     
-    var imagelink: String?{
+    public private(set) var imagelink: String?{
         didSet{
             if( imagelink != nil ){
                 imageURL = URL.init(string: imagelink!)
