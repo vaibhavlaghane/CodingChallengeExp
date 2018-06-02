@@ -64,15 +64,25 @@ class EventDetailsViewController: UIViewController {
     }
     
     func moveView(view: UIView){
-        let toPoint: CGPoint =  CGPoint(x:  0.0, y: view.frame.size.width)//  CGPointMake(0.0, -10.0)
-        let fromPoint : CGPoint = CGPoint.zero
-        let movement = CABasicAnimation(keyPath: "movement")
-        movement.isAdditive = true
-        movement.fromValue =  NSValue(cgPoint: fromPoint)
-        movement.toValue =  NSValue(cgPoint: toPoint)
-        movement.duration = 1.5
-        view.layer.add(movement, forKey: "move")
-      
+        
+        // Notify Child View Controller
+        self.willMove(toParentViewController: nil)
+        self.beginAppearanceTransition(false, animated: true)
+        // Remove Child View From Superview
+        self.view.removeFromSuperview()
+        // Notify Child View Controller
+        self.removeFromParentViewController()
+//        return childViewController
+//
+//        let toPoint: CGPoint =  CGPoint(x:  0.0, y: view.frame.size.width)//  CGPointMake(0.0, -10.0)
+//        let fromPoint : CGPoint = CGPoint.zero
+//        let movement = CABasicAnimation(keyPath: "movement")
+//        movement.isAdditive = true
+//        movement.fromValue =  NSValue(cgPoint: fromPoint)
+//        movement.toValue =  NSValue(cgPoint: toPoint)
+//        movement.duration = 1.5
+//        view.layer.add(movement, forKey: "move")
+//
     }
 
     /*
