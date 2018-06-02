@@ -33,6 +33,15 @@
 		DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */; };
 		DC0E5DBF20BF566600BE3CBE /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DBE20BF566600BE3CBE /* EventDetailsViewController.swift */; };
 		DC0E5DC220BF583600BE3CBE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E5DC120BF583600BE3CBE /* EventCell.swift */; };
+		DC1812D820C2699F00C24C68 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */; };
+		DC1812D920C2699F00C24C68 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */; };
+		DC1812DA20C2699F00C24C68 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */; };
+		DC1812DB20C2699F00C24C68 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */; };
+		DC1812DC20C2699F00C24C68 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */; };
+		DC1812DD20C2699F00C24C68 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */; };
+		DC1812DF20C26D2F00C24C68 /* SearchEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */; };
+		DC1812E020C26D2F00C24C68 /* SearchEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */; };
+		DC1812E120C26D2F00C24C68 /* SearchEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +84,9 @@
 		DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DC0E5DBE20BF566600BE3CBE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		DC0E5DC120BF583600BE3CBE /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +210,7 @@
 				DC0E5D7220BEACB200BE3CBE /* ViewController.swift */,
 				DC0E5DBA20BF4FEA00BE3CBE /* SearchTableViewController.swift */,
 				DC0E5DBE20BF566600BE3CBE /* EventDetailsViewController.swift */,
+				DC1812DE20C26D2F00C24C68 /* SearchEventController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -206,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				DC0E5DC120BF583600BE3CBE /* EventCell.swift */,
+				DC1812D620C2699F00C24C68 /* EventTableViewCell.swift */,
+				DC1812D720C2699F00C24C68 /* EventTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -314,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1812DB20C2699F00C24C68 /* EventTableViewCell.xib in Resources */,
 				DC0E5D7E20BEACB500BE3CBE /* LaunchScreen.storyboard in Resources */,
 				DC0E5D7B20BEACB500BE3CBE /* Assets.xcassets in Resources */,
 				DC0E5D7620BEACB200BE3CBE /* Main.storyboard in Resources */,
@@ -324,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1812DC20C2699F00C24C68 /* EventTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1812DD20C2699F00C24C68 /* EventTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1812D820C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
 				DC0E5DC220BF583600BE3CBE /* EventCell.swift in Sources */,
 				DC0E5DAC20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DBC20BF4FEA00BE3CBE /* SearchTableViewController.swift in Sources */,
 				DC0E5DA820BF009900BE3CBE /* DataDownloader.swift in Sources */,
+				DC1812DF20C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB020BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
 				DC0E5DA420BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB520BF0F2200BE3CBE /* Utility.swift in Sources */,
@@ -361,8 +381,10 @@
 			files = (
 				DC0E5DA520BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB120BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
+				DC1812E020C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB620BF0F2200BE3CBE /* Utility.swift in Sources */,
 				DC0E5D8920BEACB500BE3CBE /* CodingChallengeExpediaTests.swift in Sources */,
+				DC1812D920C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
 				DC0E5DAD20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DA920BF009900BE3CBE /* DataDownloader.swift in Sources */,
 			);
@@ -374,8 +396,10 @@
 			files = (
 				DC0E5DA620BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB220BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
+				DC1812E120C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB720BF0F2200BE3CBE /* Utility.swift in Sources */,
 				DC0E5D9420BEACB500BE3CBE /* CodingChallengeExpediaUITests.swift in Sources */,
+				DC1812DA20C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
 				DC0E5DAE20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DAA20BF009900BE3CBE /* DataDownloader.swift in Sources */,
 			);

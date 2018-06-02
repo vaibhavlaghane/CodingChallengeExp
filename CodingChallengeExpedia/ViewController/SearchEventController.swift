@@ -1,19 +1,23 @@
 //
-//  SearchTableViewController.swift
+//  SearchEventController.swift
 //  CodingChallengeExpedia
 //
-//  Created by Vaibhav N Laghane on 5/30/18.
+//  Created by Vaibhav N Laghane on 6/2/18.
 //  Copyright © 2018 TestExpedia. All rights reserved.
 //
 
 import UIKit
 
-let kEventCellId  = "kEventCell"
-let kshowEventDetailsId  = "showEventDetails"
-let eventCellName  = "EventCell"
+let kEventCellIdentifier = "kEventTableViewCell"
+let kshowEventDetailsdentifier = "showEventDetails"
+let eventCell  = "EventTableViewCell"
 
-class SearchTableViewController: UITableViewController , UISearchBarDelegate{
-    @IBOutlet weak var searchEvents: UISearchBar!
+class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
+    
+    
+    @IBOutlet weak var eventsTable: UITableView!
+    @IBOutlet weak var searchEventsBar: UISearchBar!
+    
     @objc var netOp = NetworkOperationManager()
     var eventList = [Event]()
     var searchEventList = [Event]()
@@ -22,99 +26,90 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.eventsTable.estimatedRowHeight =   UITableViewAutomaticDimension
+        self.eventsTable.estimatedRowHeight = 155.0;
+        
+        
         netOp.downloadData(pageNumber: pageNumber, pageSize: pageSize) { (events) in
             self.eventList = self.netOp.events
             self.searchEventList = self.eventList
             self.pageNumber = self.pageNumber + self.pageSize ;
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.eventsTable.reloadData()
             }
         }
         eventList = netOp.events
         searchEventList = eventList
-        self.tableView.estimatedRowHeight =   UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 55.0;
-      
+        // Do any additional setup after loading the view.
+          eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
     }
-  
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return searchEventList.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var  cellP = tableView.dequeueReusableCell(withIdentifier: kEventCellId , for: indexPath) as? EventCell
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var  cellP = tableView.dequeueReusableCell(withIdentifier: kEventCellIdentifier, for: indexPath) as? EventTableViewCell
         if let cell = cellP {
             // Configure the cell...
             if (indexPath.row < searchEventList.count){
                 let evnt: Event = searchEventList[indexPath.row]
-                cell.eventLabel.text = evnt.name ?? ""
+                cell.title.text = evnt.name ?? ""
+                cell.venue.text = evnt.location ?? ""
+                cell.date.text = evnt.formattedDate ?? ""
             }
             return cell
         }
-        cellP = EventCell()
+        cellP = EventTableViewCell()
         return cellP!
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: kshowEventDetailsId, sender: indexPath);
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: kshowEventDetailsdentifier, sender: indexPath);
     }
     
-    /*
-     MARK: - Navigation
-     In a storyboard-based application, you will often want to do a little preparation before navigation  */
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == kshowEventDetailsdentifier){
-            let destViewController                  =   segue.destination as! EventDetailsViewController
-            let indexPath = sender as? IndexPath
-//             destViewController.product           =   catalogList[(indexPath?.row)!]
-//             destViewController.productsList = catalogList
-        }
-    }
-    
-    deinit {
-        //removeObserver(self, forKeyPath: "products")
-    }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         // <#code#>//    [self.mSearchBar setShowsCancelButton:NO animated:YES];
         //    searchBar.text=@"";
     }
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText.count > 0) {
             //searchText =  " "
             searchAutocomplete(searchText)
-            self.tableView.reloadData()
+            eventsTable.reloadData()
         }
         else
         {
             searchEventList = eventList;
-            self.tableView.reloadData()
+            eventsTable.reloadData()
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchEvents.resignFirstResponder()
+        self.searchEventsBar.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchEvents.resignFirstResponder()
-//        searchedDataArray=dataArray;
-//        [self.mTableView reloadData];
+        self.searchEventsBar.resignFirstResponder()
+        //        searchedDataArray=dataArray;
+        //        [self.mTableView reloadData];
     }
- 
+    
     func searchAutocomplete(_ substring: String)
     {
         var searchedArray  = [Event]()
@@ -128,7 +123,7 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
         searchEventList.removeAll()
         searchEventList = searchedArray
     }
-  
+    
     /*
     // MARK: - Navigation
 
@@ -138,5 +133,5 @@ class SearchTableViewController: UITableViewController , UISearchBarDelegate{
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }
