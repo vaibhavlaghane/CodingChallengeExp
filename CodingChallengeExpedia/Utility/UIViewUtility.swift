@@ -49,5 +49,4 @@ extension UIViewController {
 
 
 class UIViewUtility: NSObject {
-
 }

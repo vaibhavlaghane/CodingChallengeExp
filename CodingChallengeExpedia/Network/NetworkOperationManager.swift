@@ -20,9 +20,9 @@ class PendingOperations {
 
 class NetworkOperationManager: NSObject {
  
-    let downloader = DataDownloader()
-    @objc    public dynamic var events = [Event]()
-    let pendingOperations = PendingOperations()
+    private let downloader = DataDownloader()
+    @objc  internal dynamic var events = [Event]()
+    private let pendingOperations = PendingOperations()
  
     /// download JSON data for given page and size
     ///
@@ -31,12 +31,12 @@ class NetworkOperationManager: NSObject {
     ///   - pageSize: size of page
     ///   - completion: completion block
     func downloadData( pageNumber: Int,pageSize: Int,  completion: @escaping ([Event]? ) -> Void )->Void{
-        downloader.getJSONData(pageNumber: pageNumber, pageSize: pageSize, completion: { (dict) in
+        downloader.getJSONData(pageNumber: pageNumber, pageSize: pageSize, completion: {[weak self] (dict) in
             let eventList = Utility.parseJSON(dict: dict)
-            self.events.append(contentsOf:eventList  )
+            self?.events.append(contentsOf:eventList  )
             completion(eventList)
-            for (index, element) in self.events.enumerated(){
-                self.startDownloadImage(event: element, index: index )
+            for (index, element) in (self?.events.enumerated())!{
+                self?.startDownloadImage(event: element, index: index )
             }
         }) { (response, error) in   //
             Utility.showAlertMessage("Failed to Download the Content", withTitle: "Download Update", onClick: {

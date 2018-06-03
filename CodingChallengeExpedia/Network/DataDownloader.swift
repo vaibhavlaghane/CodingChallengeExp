@@ -76,14 +76,11 @@ class DataDownloader: NSObject {
     ///   - pageNumber: page number
     /// - Returns: url
     internal func createURLFromParameters(_ pageSize:  String, _ pageNumber: String ) -> URL {
- 
         var components          = URLComponents()
         components.scheme   = Constants.APIDetails.APIScheme
         components.host        = Constants.APIDetails.APIHost
         components.path        = Constants.APIDetails.APIPath
         components.query      = Constants.APIDetails.queryClientId + "=" + Constants.APIDetails.CLIENTID +  "&" + Constants.APIDetails.perPage + pageSize + "&" + Constants.APIDetails.page + pageNumber
-        //components.path     = Constants.APIDetails.APIPath + "\(Constants.APIDetails.APIKey)" + "/\(pageNumber)" + "/\(pageSize)/" ;
-        
         return components.url!
     }
 }

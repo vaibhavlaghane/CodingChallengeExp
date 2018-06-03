@@ -43,25 +43,20 @@ class EventDetailsViewController: UIViewController {
         self.moveView(view: self.view)
     }
     
-    var eventName : String = "" ;
-    var date : String = "" ;
-    var venue : String  = "" ;
-    var isFavoriteEvent = false;
-    var eventDetails = Event(id: "" , name: "", location: "", date: Date() , formattedDate: "", imagelink: "", detailImageLink: "")
-    var delegate : SearchEventController? = nil 
+    internal  var eventName : String = "" ;
+    internal  var date : String = "" ;
+    internal  var venue : String  = "" ;
+    internal  var isFavoriteEvent = false;
+    internal  var eventDetails = Event(id: "" , name: "", location: "", date: Date() , formattedDate: "", imagelink: "", detailImageLink: "")
+    internal  var delegate : SearchEventController? = nil
         
     override func viewDidLoad() {
         super.viewDidLoad()
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
- 
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -17,13 +17,13 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     @IBOutlet weak var searchEventsBar: UISearchBar!
     
     @objc var netOp = NetworkOperationManager()
-    var eventList = [Event]()
-    var searchEventList = [Event]()
-    var searchEventText = ""
-    var pageNumber = 1;
-    var pageSize = 30 ;
-    var detailsScrVC = EventDetailsViewController.init(nibName: "EventDetailsViewController", bundle: nil)
-    var currentIndex = 0
+    private var eventList = [Event]()
+    private var searchEventList = [Event]()
+    private var searchEventText = ""
+    private var pageNumber = 1;
+    private var pageSize = 30 ;
+    private var detailsScrVC = EventDetailsViewController.init(nibName: "EventDetailsViewController", bundle: nil)
+    private var currentIndex = 0
   
     override func viewDidLoad() {
         super.viewDidLoad()
