@@ -78,23 +78,23 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         searchEventList = eventList
         eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
         
+        //infinite scroll setup for fetching data page after page 
         self.eventsTable.addInfiniteScroll { (tableView) -> Void in
              self.netOp.downloadData(pageNumber: self.pageNumber, pageSize: self.pageSize) { (events ) in
-                            if let  eventsSearched: Array<Event> = events{
-                                self.eventList.append(contentsOf:  eventsSearched)
-                                if(self.searchEventText.count > 0 ){
-                                self.searchAutocomplete(self.searchEventText )
-                                }else{
-                                    self.searchEventList = self.eventList
-                                }
-                                self.pageNumber = self.pageNumber + self.pageSize ;
-                                DispatchQueue.main.async {
-                                    self.eventsTable.reloadData()
-                                    // finish infinite scroll animation
-                                   self.eventsTable.finishInfiniteScroll()
-                                }
-                            }
-                        }
+                if let  eventsSearched: Array<Event> = events{
+                    self.eventList.append(contentsOf:  eventsSearched)
+                    if(self.searchEventText.count > 0 ){
+                        self.searchAutocomplete(self.searchEventText )
+                    }else{
+                        self.searchEventList = self.eventList
+                    }
+                    self.pageNumber = self.pageNumber + self.pageSize ;
+                    DispatchQueue.main.async {
+                        self.eventsTable.reloadData()
+                        self.eventsTable.finishInfiniteScroll()
+                    }
+                }
+            }
         }
         eventsTable.finishInfiniteScroll()
     }
@@ -120,7 +120,6 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         if let cell = cellP {
             // Configure the cell...
             if (indexPath.row < searchEventList.count){
-                
                 let evnt: Event = searchEventList[indexPath.row]
                 cell.title.text = evnt.name ?? ""
                 cell.venue.text = evnt.location ?? ""
@@ -128,6 +127,9 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 if ( evnt.imageData != nil ){
                     cell.imageEvent.image =    evnt.imageData
                     cell.imageEvent.setRadius(radius: 8.0)
+                }
+                if(checkFavorite(evnt.iD)){
+                    cell.imageEvent.isHidden = false
                 }
             }
             return cell
@@ -148,7 +150,6 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     }
  
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        // <#code#>//    [self.mSearchBar setShowsCancelButton:NO animated:YES];
             searchEventText="";
     }
     
@@ -156,10 +157,8 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         if (searchText.count > 0) {
             searchAutocomplete(searchText)
             eventsTable.reloadData()
-        }
-        else
-        {
-            searchEventText = "" 
+        }else{
+            searchEventText = ""
             searchEventList = eventList;
             eventsTable.reloadData()
         }
@@ -191,4 +190,16 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         searchEventList = searchedArray
     }
  
+    func checkFavorite(_  iD: String?)-> Bool{
+        if(iD == nil ){ return false }
+        if let id = iD{
+            if(id.count == 0){ return false }
+                if let fD =  UserDefaults.standard.dictionary(forKey: favoritesSet) as! Dictionary<String, Int >?{
+                    if (fD[id] == 1){
+                        return true
+                    }
+            }
+        }
+        return false ;
+    }
 }

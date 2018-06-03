@@ -16,7 +16,8 @@ enum ImageDownLoadState:String  {
 }
 
 class Event: NSObject {
-
+    
+    public private(set) var iD: String?
     public private(set) var name: String?
     public private(set) var location:String?
     public private(set) var date: Date
@@ -34,18 +35,15 @@ class Event: NSObject {
         }
     }
     
-//    convenience override init() {
-//        self.init()
-//        self.name = "event"
-//    }
-    
-    init(name: String?,
+    init(  id: String? ,
+        name: String?,
         location: String?,
         date: Date?,
         formattedDate: String?,
         imagelink: String?,
         detailImageLink: String? )
         {
+            self.iD = id ?? "empty";
             self.name = name ?? "";
             self.location = location ?? "";
             self.date = (date ?? nil)! ;

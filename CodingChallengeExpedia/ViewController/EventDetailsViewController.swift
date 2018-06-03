@@ -8,6 +8,8 @@
 
 import UIKit
 
+let favoritesSet = "favoritesSet"
+
 class EventDetailsViewController: UIViewController {
 
     @IBOutlet weak var eventVenue: UILabel!
@@ -20,11 +22,13 @@ class EventDetailsViewController: UIViewController {
     @IBAction func favoriteButtonClicked(_ sender: Any) {
         if(!favoriteButton.filled){
             favoriteButton.filled = true
+            saveFavorite(eventDetails.iD, true)
             DispatchQueue.main.async {
                 self.favoriteButton.draw(self.favoriteButton.frame)
             }
         }else{
             favoriteButton.filled = false
+            saveFavorite(eventDetails.iD, false )
             DispatchQueue.main.async {
                 self.favoriteButton.draw(self.favoriteButton.frame)
             }
@@ -39,7 +43,7 @@ class EventDetailsViewController: UIViewController {
     var date : String = "" ;
     var venue : String  = "" ;
     var isFavoriteEvent = false;
-    var eventDetails = Event(name: "", location: "", date: Date() , formattedDate: "", imagelink: "", detailImageLink: "")
+    var eventDetails = Event(id: "" , name: "", location: "", date: Date() , formattedDate: "", imagelink: "", detailImageLink: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +51,12 @@ class EventDetailsViewController: UIViewController {
         eventDate.text = date
         eventTitleLabel.text = eventName
         
-        if (isFavoriteEvent){
-            favoriteButton.filled = true
-            DispatchQueue.main.async {
-                self.favoriteButton.draw(self.favoriteButton.frame)
-            }
-        }
+//        if (isFavoriteEvent){
+//            favoriteButton.filled = true
+//            DispatchQueue.main.async {
+//                self.favoriteButton.draw(self.favoriteButton.frame)
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +102,50 @@ class EventDetailsViewController: UIViewController {
                 }
             }
         }
+        
+        if(checkFavorite( eventDetails.iD )){
+            favoriteButton.filled = true
+            DispatchQueue.main.async {
+                self.favoriteButton.draw(self.favoriteButton.frame)
+            }
+        }else{
+            favoriteButton.filled = false
+            DispatchQueue.main.async {
+                self.favoriteButton.draw(self.favoriteButton.frame)
+            }
+        }
     }
     
+    func saveFavorite(_  iD: String?  , _  save: Bool){
+        guard let id = iD else { return }
+        var favoritesDictionary: Dictionary<String, Int >
+        
+        if let fD =  UserDefaults.standard.dictionary(forKey: favoritesSet) as! Dictionary<String, Int >?{
+            favoritesDictionary = fD
+        }else{
+            favoritesDictionary = Dictionary<String, Int >()
+        }
+        if(save){
+            favoritesDictionary[id] = 1
+            UserDefaults.standard.set(favoritesDictionary, forKey: favoritesSet) //setObject
+        }else{
+                favoritesDictionary.removeValue(forKey: id)
+                UserDefaults.standard.set(favoritesDictionary, forKey: favoritesSet) //setObject
+        }
+        
+        UserDefaults.standard.synchronize()
+    }
+    
+    func checkFavorite(_  iD: String?)-> Bool{
+        if(iD == nil ){ return false }
+        if let id = iD{
+            if(id.count == 0){ return false }
+            if let fD =  UserDefaults.standard.dictionary(forKey: favoritesSet) as! Dictionary<String, Int >?{
+                if (fD[id] == 1){
+                    return true
+                }
+            }
+        }
+        return false ;
+    }
 }

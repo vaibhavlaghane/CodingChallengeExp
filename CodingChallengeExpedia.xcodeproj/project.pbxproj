@@ -99,8 +99,6 @@
 		DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
 		DC1812FC20C2DB6600C24C68 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		DC18130720C3A81000C24C68 /* CodingChallengeExpedia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpedia-Bridging-Header.h"; sourceTree = "<group>"; };
-		DC18130820C3A81000C24C68 /* CodingChallengeExpediaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpediaTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		DC18130920C3A81000C24C68 /* CodingChallengeExpediaUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpediaUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC18130A20C3A81200C24C68 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
 		DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+InfiniteScroll.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,8 +262,6 @@
 				DC18130A20C3A81200C24C68 /* UIScrollView+InfiniteScroll.h */,
 				DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */,
 				DC18130720C3A81000C24C68 /* CodingChallengeExpedia-Bridging-Header.h */,
-				DC18130820C3A81000C24C68 /* CodingChallengeExpediaTests-Bridging-Header.h */,
-				DC18130920C3A81000C24C68 /* CodingChallengeExpediaUITests-Bridging-Header.h */,
 			);
 			path = Scroll;
 			sourceTree = "<group>";

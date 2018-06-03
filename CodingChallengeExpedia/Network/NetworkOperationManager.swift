@@ -23,16 +23,7 @@ class NetworkOperationManager: NSObject {
     let downloader = DataDownloader()
     @objc    public dynamic var events = [Event]()
     let pendingOperations = PendingOperations()
-    
-    
-//    func getNumberOfEvents( pageNumber: Int,pageSize: Int,  completion: @escaping ([Event]? ) -> Void )->Void{
-//        downloader.getJSONData(pageNumber: pageNumber, pageSize: pageSize, completion: { (dict) in
-//           
-//            completion()
-//        })
-//        
-//    }
-//    
+ 
     /// download JSON data for given page and size
     ///
     /// - Parameters:
@@ -77,21 +68,14 @@ class NetworkOperationManager: NSObject {
     ///   - event: event to download the image for
     ///   - indexPath: index of the product in the array
     func startDownloadImage(event: Event, index: Int){
-        
-        if let _ = pendingOperations.downloadsInProgress[index ] {
-            return
-        }
+        if let _ = pendingOperations.downloadsInProgress[index ] {return}
         let downloader = ImageDownloader(event: event)
-        
         downloader.completionBlock = {
-            if downloader.isCancelled {
-                return
-            }
+            if downloader.isCancelled {return}
             DispatchQueue.main.async {
                 self.pendingOperations.downloadsInProgress.removeValue(forKey: index )
             }
         }
-        
         pendingOperations.downloadsInProgress[index ] = downloader
         pendingOperations.downloadQueue.addOperation(downloader)
     }

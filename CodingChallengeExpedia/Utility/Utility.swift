@@ -128,7 +128,17 @@ class Utility: NSObject {
                 let title = event[EventDetails.title]  as? String ?? ""
                 let _:String  = event[EventDetails.url] as? String ?? ""
                 let location = city + "," + state
-                let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: imageURL, detailImageLink: detailImageURL)
+                
+                let iDNum = event[EventDetails.id] as! Int 
+                let iD = String(iDNum)
+                
+                let eventD = Event(id: iD,
+                                   name: title,
+                                   location: location,
+                                   date: Date(),
+                                   formattedDate: dateTimeUTC,
+                                   imagelink: imageURL,
+                                   detailImageLink: detailImageURL)
                 events.append(eventD)
             }
         }
