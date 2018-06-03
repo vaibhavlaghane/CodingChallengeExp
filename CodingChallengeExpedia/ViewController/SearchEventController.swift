@@ -91,12 +91,18 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 if ( evnt.imageData != nil ){
                     cell.imageEvent.image =    evnt.imageData
                     cell.imageEvent.setRadius(radius: 8.0)
+                }else{
+                    cell.imageEvent.image =    UIImage(named: "ghostimage")
+                    cell.imageEvent.setRadius(radius: 8.0)
                 }
                 if(checkFavorite(evnt.iD)){
                     DispatchQueue.main.async {
-                 //       cell.imageEvent.isHidden = false
+                        cell.favoriteIcon.isHidden = false
                     }
-                    
+                }else{
+                    DispatchQueue.main.async {
+                        cell.favoriteIcon.isHidden = true
+                    }
                 }
             }
             return cell
@@ -189,7 +195,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 child.removeFromParentViewController()
                 
                 let indexPath = IndexPath(item: currentIndex, section: 0)
-               // self.eventsTable.reloadRows(at: [indexPath], with: .top)
+                self.eventsTable.reloadRows(at: [indexPath], with: .none)
             }
         }
     }
