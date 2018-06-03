@@ -21,8 +21,7 @@ struct Constants {
         static let CLIENTID = "MTE3NTYyOTV8MTUyNzY5Njg4Mi45Mg"
         static let perPage = "per_page="
         static let page = "page="
-        static let and = "&"
-        static let q = "?"
+    
     }
 }
 
@@ -78,11 +77,11 @@ class DataDownloader: NSObject {
     /// - Returns: url
     internal func createURLFromParameters(_ pageSize:  String, _ pageNumber: String ) -> URL {
  
-        var components      = URLComponents()
+        var components          = URLComponents()
         components.scheme   = Constants.APIDetails.APIScheme
-        components.host     = Constants.APIDetails.APIHost
-        components.path     = Constants.APIDetails.APIPath
-        components.query   = Constants.APIDetails.queryClientId + "=" + Constants.APIDetails.CLIENTID
+        components.host        = Constants.APIDetails.APIHost
+        components.path        = Constants.APIDetails.APIPath
+        components.query      = Constants.APIDetails.queryClientId + "=" + Constants.APIDetails.CLIENTID +  "&" + Constants.APIDetails.perPage + pageSize + "&" + Constants.APIDetails.page + pageNumber
         //components.path     = Constants.APIDetails.APIPath + "\(Constants.APIDetails.APIKey)" + "/\(pageNumber)" + "/\(pageSize)/" ;
         
         return components.url!

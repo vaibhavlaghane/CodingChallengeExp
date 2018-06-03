@@ -45,7 +45,7 @@
                             <constraint firstAttribute="height" constant="101" id="h8I-8M-V3J"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdf-f7-mVe" customClass="HeartButton" customModule="CodingChallengeExpedia" customModuleProvider="target">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdf-f7-mVe" customClass="HeartButton" customModule="CodingChallengeExpedia" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="ECK-4f-1E6"/>

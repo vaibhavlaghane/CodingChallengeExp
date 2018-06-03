@@ -50,6 +50,9 @@
 		DC1812FD20C2DB6600C24C68 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812FC20C2DB6600C24C68 /* HeartButton.swift */; };
 		DC1812FE20C2DB6600C24C68 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812FC20C2DB6600C24C68 /* HeartButton.swift */; };
 		DC1812FF20C2DB6600C24C68 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1812FC20C2DB6600C24C68 /* HeartButton.swift */; };
+		DC18130C20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */; };
+		DC18130D20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */; };
+		DC18130E20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,11 @@
 		DC1812F320C2828600C24C68 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		DC1812F420C2828600C24C68 /* EventDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsViewController.xib; sourceTree = "<group>"; };
 		DC1812FC20C2DB6600C24C68 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		DC18130720C3A81000C24C68 /* CodingChallengeExpedia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpedia-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC18130820C3A81000C24C68 /* CodingChallengeExpediaTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpediaTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC18130920C3A81000C24C68 /* CodingChallengeExpediaUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpediaUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC18130A20C3A81200C24C68 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
+		DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+InfiniteScroll.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 		DC0E5D6F20BEACB200BE3CBE /* CodingChallengeExpedia */ = {
 			isa = PBXGroup;
 			children = (
+				DC18130020C3A7AC00C24C68 /* ThirdParty */,
 				DC0E5DB920BF4E3900BE3CBE /* ViewController */,
 				DC0E5DB820BF4DCF00BE3CBE /* Resources */,
 				DC0E5DB320BF0F1200BE3CBE /* Utility */,
@@ -241,6 +250,26 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		DC18130020C3A7AC00C24C68 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				DC18130120C3A7AC00C24C68 /* Scroll */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		DC18130120C3A7AC00C24C68 /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				DC18130A20C3A81200C24C68 /* UIScrollView+InfiniteScroll.h */,
+				DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */,
+				DC18130720C3A81000C24C68 /* CodingChallengeExpedia-Bridging-Header.h */,
+				DC18130820C3A81000C24C68 /* CodingChallengeExpediaTests-Bridging-Header.h */,
+				DC18130920C3A81000C24C68 /* CodingChallengeExpediaUITests-Bridging-Header.h */,
+			);
+			path = Scroll;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,13 +338,16 @@
 				TargetAttributes = {
 					DC0E5D6C20BEACB200BE3CBE = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 					DC0E5D8320BEACB500BE3CBE = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 						TestTargetID = DC0E5D6C20BEACB200BE3CBE;
 					};
 					DC0E5D8E20BEACB500BE3CBE = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 						TestTargetID = DC0E5D6C20BEACB200BE3CBE;
 					};
 				};
@@ -389,6 +421,7 @@
 				DC1812DF20C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB020BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
 				DC0E5DA420BEADF300BE3CBE /* Event.swift in Sources */,
+				DC18130C20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */,
 				DC0E5DB520BF0F2200BE3CBE /* Utility.swift in Sources */,
 				DC0E5D7920BEACB200BE3CBE /* CodingChallengeExpedia.xcdatamodeld in Sources */,
 				DC0E5D7120BEACB200BE3CBE /* AppDelegate.swift in Sources */,
@@ -409,6 +442,7 @@
 				DC1812D920C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
 				DC0E5DAD20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DA920BF009900BE3CBE /* DataDownloader.swift in Sources */,
+				DC18130D20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +460,7 @@
 				DC1812DA20C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
 				DC0E5DAE20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DAA20BF009900BE3CBE /* DataDownloader.swift in Sources */,
+				DC18130E20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/CodingChallengeExpedia/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,6 +626,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestExpedia.CodingChallengeExpedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingChallengeExpedia/ThirdParty/Scroll/CodingChallengeExpedia-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -599,6 +637,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/CodingChallengeExpedia/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,6 +646,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestExpedia.CodingChallengeExpedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingChallengeExpedia/ThirdParty/Scroll/CodingChallengeExpedia-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,6 +657,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CodingChallengeExpediaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -626,6 +667,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestExpedia.CodingChallengeExpediaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingChallengeExpedia/ThirdParty/Scroll/CodingChallengeExpediaTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodingChallengeExpedia.app/CodingChallengeExpedia";
@@ -637,6 +680,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CodingChallengeExpediaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -646,6 +690,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestExpedia.CodingChallengeExpediaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingChallengeExpedia/ThirdParty/Scroll/CodingChallengeExpediaTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodingChallengeExpedia.app/CodingChallengeExpedia";
@@ -656,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CodingChallengeExpediaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -665,6 +711,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestExpedia.CodingChallengeExpediaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingChallengeExpedia/ThirdParty/Scroll/CodingChallengeExpediaUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CodingChallengeExpedia;
@@ -675,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CodingChallengeExpediaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -684,6 +733,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestExpedia.CodingChallengeExpediaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodingChallengeExpedia/ThirdParty/Scroll/CodingChallengeExpediaUITests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CodingChallengeExpedia;

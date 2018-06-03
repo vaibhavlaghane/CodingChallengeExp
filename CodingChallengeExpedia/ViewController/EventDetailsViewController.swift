@@ -23,7 +23,6 @@ class EventDetailsViewController: UIViewController {
             DispatchQueue.main.async {
                 self.favoriteButton.draw(self.favoriteButton.frame)
             }
-            
         }else{
             favoriteButton.filled = false
             DispatchQueue.main.async {
@@ -66,6 +65,7 @@ class EventDetailsViewController: UIViewController {
     
     func moveView(view: UIView){
         // Notify Child View Controller
+        self.eventImage.image = nil
         self.willMove(toParentViewController: nil)
         self.beginAppearanceTransition(false, animated: true)
         // Remove Child View From Superview
@@ -73,7 +73,6 @@ class EventDetailsViewController: UIViewController {
         // Notify Child View Controller
         self.removeFromParentViewController()
 //        return childViewController
-//
 //        let toPoint: CGPoint =  CGPoint(x:  0.0, y: view.frame.size.width)//  CGPointMake(0.0, -10.0)
 //        let fromPoint : CGPoint = CGPoint.zero
 //        let movement = CABasicAnimation(keyPath: "movement")

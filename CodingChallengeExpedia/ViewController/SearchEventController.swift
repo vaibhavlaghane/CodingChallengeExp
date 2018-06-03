@@ -57,6 +57,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     @objc var netOp = NetworkOperationManager()
     var eventList = [Event]()
     var searchEventList = [Event]()
+    var searchEventText = ""
     var pageNumber = 1;
     var pageSize = 30 ;
     var detailsScrVC = EventDetailsViewController.init(nibName: "EventDetailsViewController", bundle: nil)
@@ -76,6 +77,26 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         eventList = netOp.events
         searchEventList = eventList
         eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
+        
+        self.eventsTable.addInfiniteScroll { (tableView) -> Void in
+             self.netOp.downloadData(pageNumber: self.pageNumber, pageSize: self.pageSize) { (events ) in
+                            if let  eventsSearched: Array<Event> = events{
+                                self.eventList.append(contentsOf:  eventsSearched)
+                                if(self.searchEventText.count > 0 ){
+                                self.searchAutocomplete(self.searchEventText )
+                                }else{
+                                    self.searchEventList = self.eventList
+                                }
+                                self.pageNumber = self.pageNumber + self.pageSize ;
+                                DispatchQueue.main.async {
+                                    self.eventsTable.reloadData()
+                                    // finish infinite scroll animation
+                                   self.eventsTable.finishInfiniteScroll()
+                                }
+                            }
+                        }
+        }
+        eventsTable.finishInfiniteScroll()
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,10 +146,10 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
          detailsScrVC.setupParameters() ;
     }
-     
+ 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         // <#code#>//    [self.mSearchBar setShowsCancelButton:NO animated:YES];
-        //    searchBar.text=@"";
+            searchEventText="";
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -138,6 +159,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         }
         else
         {
+            searchEventText = "" 
             searchEventList = eventList;
             eventsTable.reloadData()
         }
@@ -155,6 +177,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     
     func searchAutocomplete(_ substring: String)
     {
+        searchEventText = substring
         var searchedArray  = [Event]()
         for curEvent in eventList
         {
@@ -165,9 +188,6 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
             }
         }
         searchEventList.removeAll()
-    //  searchedArray.sort { (e1, e2) -> Bool in
-    //     UIContentSizeCategory(rawValue: e1.name!) > UIContentSizeCategory(rawValue: e2.name!)
-    // }
         searchEventList = searchedArray
     }
  

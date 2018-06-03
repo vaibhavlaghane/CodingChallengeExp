@@ -24,6 +24,15 @@ class NetworkOperationManager: NSObject {
     @objc    public dynamic var events = [Event]()
     let pendingOperations = PendingOperations()
     
+    
+//    func getNumberOfEvents( pageNumber: Int,pageSize: Int,  completion: @escaping ([Event]? ) -> Void )->Void{
+//        downloader.getJSONData(pageNumber: pageNumber, pageSize: pageSize, completion: { (dict) in
+//           
+//            completion()
+//        })
+//        
+//    }
+//    
     /// download JSON data for given page and size
     ///
     /// - Parameters:
