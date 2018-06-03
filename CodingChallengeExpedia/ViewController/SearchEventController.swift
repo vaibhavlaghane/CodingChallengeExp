@@ -9,47 +9,9 @@
 import UIKit
 
 let kEventCellIdentifier = "kEventTableViewCell"
-let kshowEventDetailsdentifier = "showEventDetails"
 let eventCell  = "EventTableViewCell"
 
-extension UIViewController {
-    //convenience method to add a childviewcontroller
-    func configureChildViewController(childController: UIViewController, onView: UIView?) {
-        var holderView = self.view
-        if let onView = onView {
-            holderView = onView
-        }
-        addChildViewController(childController)
-        //slide in the view from right to left
-        let transition = CATransition()
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        self.view.layer.add(transition, forKey: nil)
-        
-        holderView?.addSubview(childController.view)
-        constrainViewEqual(holderView: holderView!, view: childController.view)
-        childController.didMove(toParentViewController: self)
-        childController.willMove(toParentViewController: self)
-    }
-    
-    
-    func constrainViewEqual(holderView: UIView, view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        //pin 100 points from the top of the super
-        let pinTop = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal,
-                                        toItem: holderView, attribute: .top, multiplier: 1.0, constant: 0)
-        let pinBottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal,
-                                           toItem: holderView, attribute: .bottom, multiplier: 1.0, constant: 0)
-        let pinLeft = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal,
-                                         toItem: holderView, attribute: .left, multiplier: 1.0, constant: 0)
-        let pinRight = NSLayoutConstraint(item: view, attribute: .right, relatedBy: .equal,
-                                          toItem: holderView, attribute: .right, multiplier: 1.0, constant: 0)
-        holderView.addConstraints([pinTop, pinBottom, pinLeft, pinRight])
-    }
-    
-}
-
-class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
+class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate,ChildTransitionDelegate  {
 
     @IBOutlet weak var eventsTable: UITableView!
     @IBOutlet weak var searchEventsBar: UISearchBar!
@@ -61,6 +23,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
     var pageNumber = 1;
     var pageSize = 30 ;
     var detailsScrVC = EventDetailsViewController.init(nibName: "EventDetailsViewController", bundle: nil)
+    var currentIndex = 0
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +41,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         searchEventList = eventList
         eventsTable.register(UINib(nibName: eventCell, bundle: nil), forCellReuseIdentifier: kEventCellIdentifier)
         
-        //infinite scroll setup for fetching data page after page 
+        //infinite scroll setup for fetching data page after page
         self.eventsTable.addInfiniteScroll { (tableView) -> Void in
              self.netOp.downloadData(pageNumber: self.pageNumber, pageSize: self.pageSize) { (events ) in
                 if let  eventsSearched: Array<Event> = events{
@@ -97,6 +60,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
             }
         }
         eventsTable.finishInfiniteScroll()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,7 +93,10 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                     cell.imageEvent.setRadius(radius: 8.0)
                 }
                 if(checkFavorite(evnt.iD)){
-                    cell.imageEvent.isHidden = false
+                    DispatchQueue.main.async {
+                 //       cell.imageEvent.isHidden = false
+                    }
+                    
                 }
             }
             return cell
@@ -144,11 +111,15 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         detailsScrVC.venue = event.location ?? ""
         detailsScrVC.date = event.formattedDate ?? ""
         detailsScrVC.isFavoriteEvent = false;//
-        detailsScrVC.eventDetails = event 
+        detailsScrVC.eventDetails = event
+        detailsScrVC.delegate =  self;
+        currentIndex = indexPath.row
+        
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
          detailsScrVC.setupParameters() ;
     }
  
+    //Mark - searchBar delegate methos
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
             searchEventText="";
     }
@@ -201,5 +172,36 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
             }
         }
         return false ;
+        
     }
+    
+    //Mark - delegate to hide child view controller
+    func dismissChildController() {
+        let childVC = self.childViewControllers
+        for(_ , child ) in childVC.enumerated(){
+            if( child.isKind(of: EventDetailsViewController.self)){
+                //slide in the view from right to left
+                let transition = CATransition()
+                transition.type = kCATransitionPush
+                transition.subtype = kCATransitionFromLeft
+                self.view.layer.add(transition, forKey: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParentViewController()
+                
+                let indexPath = IndexPath(item: currentIndex, section: 0)
+               // self.eventsTable.reloadRows(at: [indexPath], with: .top)
+            }
+        }
+    }
+    
+    func dismissChildController(_ childController: UIViewController) {
+        let transition = CATransition()
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        childController.view.layer.add(transition, forKey: nil)
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+    }
+    
+    
 }

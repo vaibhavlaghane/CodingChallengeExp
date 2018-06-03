@@ -53,6 +53,9 @@
 		DC18130C20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */; };
 		DC18130D20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */; };
 		DC18130E20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */; };
+		DC18131020C3DA2000C24C68 /* UIViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18130F20C3DA2000C24C68 /* UIViewUtility.swift */; };
+		DC18131120C3DA2000C24C68 /* UIViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18130F20C3DA2000C24C68 /* UIViewUtility.swift */; };
+		DC18131220C3DA2000C24C68 /* UIViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC18130F20C3DA2000C24C68 /* UIViewUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,7 @@
 		DC18130720C3A81000C24C68 /* CodingChallengeExpedia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodingChallengeExpedia-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC18130A20C3A81200C24C68 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
 		DC18130B20C3A81200C24C68 /* UIScrollView+InfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+InfiniteScroll.m"; sourceTree = "<group>"; };
+		DC18130F20C3DA2000C24C68 /* UIViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 			children = (
 				DC0E5DB420BF0F2200BE3CBE /* Utility.swift */,
 				DC1812FC20C2DB6600C24C68 /* HeartButton.swift */,
+				DC18130F20C3DA2000C24C68 /* UIViewUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				DC1812D820C2699F00C24C68 /* EventTableViewCell.swift in Sources */,
 				DC0E5DAC20BF00B900BE3CBE /* NetworkOperationManager.swift in Sources */,
 				DC0E5DA820BF009900BE3CBE /* DataDownloader.swift in Sources */,
+				DC18131020C3DA2000C24C68 /* UIViewUtility.swift in Sources */,
 				DC1812FD20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC1812F520C2828600C24C68 /* EventDetailsViewController.swift in Sources */,
 				DC1812DF20C26D2F00C24C68 /* SearchEventController.swift in Sources */,
@@ -431,6 +437,7 @@
 				DC1812FE20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC0E5DA520BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB120BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
+				DC18131120C3DA2000C24C68 /* UIViewUtility.swift in Sources */,
 				DC1812E020C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB620BF0F2200BE3CBE /* Utility.swift in Sources */,
 				DC0E5D8920BEACB500BE3CBE /* CodingChallengeExpediaTests.swift in Sources */,
@@ -449,6 +456,7 @@
 				DC1812FF20C2DB6600C24C68 /* HeartButton.swift in Sources */,
 				DC0E5DA620BEADF300BE3CBE /* Event.swift in Sources */,
 				DC0E5DB220BF00CE00BE3CBE /* ImageDownloader.swift in Sources */,
+				DC18131220C3DA2000C24C68 /* UIViewUtility.swift in Sources */,
 				DC1812E120C26D2F00C24C68 /* SearchEventController.swift in Sources */,
 				DC0E5DB720BF0F2200BE3CBE /* Utility.swift in Sources */,
 				DC0E5D9420BEACB500BE3CBE /* CodingChallengeExpediaUITests.swift in Sources */,

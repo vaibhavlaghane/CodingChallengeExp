@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/DataDownloader.swift"
-            timestampString = "549702014.340657"
+            timestampString = "549707022.963292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/DataDownloader.swift"
-            timestampString = "549702014.34076"
+            timestampString = "549707022.9633991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/ImageDownloader.swift"
-            timestampString = "549702014.341332"
+            timestampString = "549707022.9639471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/ImageDownloader.swift"
-            timestampString = "549702014.3414201"
+            timestampString = "549707022.9640321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/ImageDownloader.swift"
-            timestampString = "549702014.341499"
+            timestampString = "549707022.9641089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/ImageDownloader.swift"
-            timestampString = "549702014.341579"
+            timestampString = "549707022.964187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Utility/Utility.swift"
-            timestampString = "549702014.3416589"
+            timestampString = "549707022.9642659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Utility/Utility.swift"
-            timestampString = "549702014.342189"
+            timestampString = "549707022.964341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.34253"
+            timestampString = "549707022.964414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Utility/HeartButton.swift"
-            timestampString = "549702014.3426419"
+            timestampString = "549707022.96531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Utility/HeartButton.swift"
-            timestampString = "549702014.342751"
+            timestampString = "549707022.965449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Utility/HeartButton.swift"
-            timestampString = "549702014.342855"
+            timestampString = "549707022.965585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
-            timestampString = "549702014.342954"
+            timestampString = "549707022.965714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpediaTests/CodingChallengeExpediaTests.swift"
-            timestampString = "549702014.343439"
+            timestampString = "549707022.966432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -394,13 +394,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/NetworkOperationManager.swift"
-            timestampString = "549702014.343864"
+            timestampString = "549707022.966548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "NetworkOperationManager"
-            landmarkType = "3">
+            landmarkName = "downloadData(pageNumber:pageSize:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/NetworkOperationManager.swift"
-            timestampString = "549702014.343937"
+            timestampString = "549707022.966645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -426,11 +426,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/NetworkOperationManager.swift"
-            timestampString = "549702014.344007"
+            timestampString = "549707022.966741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
-            endingLineNumber = "80">
+            endingLineNumber = "80"
+            landmarkName = "startDownloadImage(event:index:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -440,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/ImageDownloader.swift"
-            timestampString = "549702014.344077"
+            timestampString = "549707022.9668339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -456,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Network/ImageDownloader.swift"
-            timestampString = "549702014.344147"
+            timestampString = "549707022.966929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -472,12 +474,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Model/Event.swift"
-            timestampString = "549702014.344219"
+            timestampString = "549707022.967025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "init(name:location:date:formattedDate:imagelink:detailImageLink:)"
+            landmarkName = "init(id:name:location:date:formattedDate:imagelink:detailImageLink:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -488,12 +490,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Model/Event.swift"
-            timestampString = "549702014.344288"
+            timestampString = "549707022.967124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "init(name:location:date:formattedDate:imagelink:detailImageLink:)"
+            landmarkName = "init(id:name:location:date:formattedDate:imagelink:detailImageLink:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -504,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
-            timestampString = "549702014.3443559"
+            timestampString = "549707022.967223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "searchBarTextDidEndEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -520,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
-            timestampString = "549702014.34466"
+            timestampString = "549707022.967737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -536,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
-            timestampString = "549702014.344957"
+            timestampString = "549707022.968237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -548,15 +550,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.345252"
+            timestampString = "549707022.968739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "checkFavorite(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -568,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.345325"
+            timestampString = "549707022.969192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "checkFavorite(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -584,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.3453881"
+            timestampString = "549707022.969584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "saveFavorite(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -600,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.345449"
+            timestampString = "549707022.969974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "saveFavorite(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -612,15 +614,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.34551"
+            timestampString = "549707022.9703701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "favoriteButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -628,15 +630,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.3455729"
+            timestampString = "549707022.970754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "favoriteButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -644,15 +646,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
-            timestampString = "549702014.345634"
+            timestampString = "549707022.971215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "setupParameters()"
             landmarkType = "7">
          </BreakpointContent>
@@ -660,15 +662,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
-            timestampString = "549702014.3456939"
+            timestampString = "549707022.971612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -680,13 +682,189 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CodingChallengeExpedia/Utility/Utility.swift"
-            timestampString = "549702014.345962"
+            timestampString = "549707022.9720269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
             landmarkName = "parseJSON(dict:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/Model/Event.swift"
+            timestampString = "549707022.972105"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "init(id:name:location:date:formattedDate:imagelink:detailImageLink:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CodingChallengeExpedia.Event.__allocating_init(id: Swift.Optional&lt;Swift.String&gt;, name: Swift.Optional&lt;Swift.String&gt;, location: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Foundation.Date&gt;, formattedDate: Swift.Optional&lt;Swift.String&gt;, imagelink: Swift.Optional&lt;Swift.String&gt;, detailImageLink: Swift.Optional&lt;Swift.String&gt;) -&gt; CodingChallengeExpedia.Event"
+                  moduleName = "CodingChallengeExpedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vaibhavlaghane/Documents/PROJECTS_/Expedia/iOS-Coding-Challenge/CodingChallengeExp/CodingChallengeExpedia/Model/Event.swift"
+                  timestampString = "549706532.6844471"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "159">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CodingChallengeExpedia.Event.init(id: Swift.Optional&lt;Swift.String&gt;, name: Swift.Optional&lt;Swift.String&gt;, location: Swift.Optional&lt;Swift.String&gt;, date: Swift.Optional&lt;Foundation.Date&gt;, formattedDate: Swift.Optional&lt;Swift.String&gt;, imagelink: Swift.Optional&lt;Swift.String&gt;, detailImageLink: Swift.Optional&lt;Swift.String&gt;) -&gt; CodingChallengeExpedia.Event"
+                  moduleName = "CodingChallengeExpedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vaibhavlaghane/Documents/PROJECTS_/Expedia/iOS-Coding-Challenge/CodingChallengeExp/CodingChallengeExpedia/Model/Event.swift"
+                  timestampString = "549706532.687058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "604">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/ViewController/EventDetailsViewController.swift"
+            timestampString = "549707022.972186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "moveView(view:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
+            timestampString = "549707022.972545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
+            timestampString = "549707022.9728889"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
+            timestampString = "549707022.9732341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
+            timestampString = "549707022.973575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodingChallengeExpedia/ViewController/SearchEventController.swift"
+            timestampString = "549707022.9739209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CodingChallengeExpedia.SearchEventController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "CodingChallengeExpedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vaibhavlaghane/Documents/PROJECTS_/Expedia/iOS-Coding-Challenge/CodingChallengeExp/CodingChallengeExpedia/ViewController/SearchEventController.swift"
+                  timestampString = "549706624.120416"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "4020">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in CodingChallengeExpedia.SearchEventController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "CodingChallengeExpedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vaibhavlaghane/Documents/PROJECTS_/Expedia/iOS-Coding-Challenge/CodingChallengeExp/CodingChallengeExpedia/ViewController/SearchEventController.swift"
+                  timestampString = "549706624.124694"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

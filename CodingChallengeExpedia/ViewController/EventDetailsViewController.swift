@@ -10,8 +10,12 @@ import UIKit
 
 let favoritesSet = "favoritesSet"
 
-class EventDetailsViewController: UIViewController {
+protocol ChildTransitionDelegate {
+    func dismissChildController()
+    func dismissChildController(_ childController: UIViewController)
+}
 
+class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventVenue: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
@@ -44,19 +48,15 @@ class EventDetailsViewController: UIViewController {
     var venue : String  = "" ;
     var isFavoriteEvent = false;
     var eventDetails = Event(id: "" , name: "", location: "", date: Date() , formattedDate: "", imagelink: "", detailImageLink: "")
-    
+    var delegate : SearchEventController? = nil 
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
+ 
         
-//        if (isFavoriteEvent){
-//            favoriteButton.filled = true
-//            DispatchQueue.main.async {
-//                self.favoriteButton.draw(self.favoriteButton.frame)
-//            }
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,28 +68,12 @@ class EventDetailsViewController: UIViewController {
     }
     
     func moveView(view: UIView){
-        // Notify Child View Controller
-        self.eventImage.image = nil
-        self.willMove(toParentViewController: nil)
-        self.beginAppearanceTransition(false, animated: true)
-        // Remove Child View From Superview
-        self.view.removeFromSuperview()
-        // Notify Child View Controller
-        self.removeFromParentViewController()
-//        return childViewController
-//        let toPoint: CGPoint =  CGPoint(x:  0.0, y: view.frame.size.width)//  CGPointMake(0.0, -10.0)
-//        let fromPoint : CGPoint = CGPoint.zero
-//        let movement = CABasicAnimation(keyPath: "movement")
-//        movement.isAdditive = true
-//        movement.fromValue =  NSValue(cgPoint: fromPoint)
-//        movement.toValue =  NSValue(cgPoint: toPoint)
-//        movement.duration = 1.5
-//        view.layer.add(movement, forKey: "move")
-//
+        delegate?.dismissChildController()
     }
 
     //setup parameters of the view 
     func setupParameters(){
+        eventImage.image = nil 
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
