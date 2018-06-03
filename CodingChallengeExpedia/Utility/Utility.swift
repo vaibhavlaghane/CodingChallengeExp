@@ -90,16 +90,9 @@ class Utility: NSObject {
         for (_,element) in eventArr.enumerated(){
             if  let event = element as? Dictionary< String, Any?>{
                 let performers : Array<Dictionary<String, Any>> = event[EventDetails.performers] as! Array<Dictionary<String,Any>>
-//                let venue = event[EventDetails.venue] ?? ""
-//                let address = event[EventDetails.address] ?? ""
-//                let id = event[EventDetails.id] ?? ""
-//                let shortTitle = event[EventDetails.shortTitle] ?? ""
+                let dateTimeLocal : String = event[ EventDetails.dateTimeLocal] as? String ?? ""
                 let dateTimeUTC : String = event[EventDetails.dateTimeUTC] as? String ?? ""
-//                let score = event[EventDetails.score] ?? ""
-//                let taxonomies = event[EventDetails.taxonomies] ?? ""
-//                let type = event[EventDetails.type] ?? ""
                 let venueDict : Dictionary<String, Any > = event[EventDetails.venue] as! Dictionary<String, Any>
-               // let locationDict: Dictionary<String, Any> = venueDict[ Venue.location ] as! Dictionary<String, Any>;
                 let city: String = venueDict[ Venue.city]   as? String ?? ""
                 let state : String  = venueDict[Venue.state]  as? String ?? ""
                 let perDict   = performers[0]
@@ -132,17 +125,34 @@ class Utility: NSObject {
                 let iDNum = event[EventDetails.id] as! Int 
                 let iD = String(iDNum)
                 
+                let dateTimeFormatted = Utility.getDateString(dateTimeLocal )
+                
                 let eventD = Event(id: iD,
                                    name: title,
                                    location: location,
                                    date: Date(),
-                                   formattedDate: dateTimeUTC,
+                                   formattedDate: dateTimeFormatted,
                                    imagelink: imageURL,
                                    detailImageLink: detailImageURL)
                 events.append(eventD)
             }
         }
         return events
+    }
+    
+    static func getDateString( _ dateStr: String? ) -> String {
+        
+    let string =  dateStr ??  "2017-01-27T18:36:36"
+    let dateFormatter = DateFormatter()
+    let tempLocale = dateFormatter.locale // save locale temporarily
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+    let date = dateFormatter.date(from: string)!
+    dateFormatter.dateFormat = "EEE, dd MMM yyyy, HH:mm:ss Z"
+    dateFormatter.locale = tempLocale // reset the locale
+    let dateString = dateFormatter.string(from: date)
+    print("EXACT_DATE : \(dateString)")
+        return dateString
     }
     
     class func showAlertMessage(_ message: String, withTitle title: String, onClick completion: @escaping () -> Void) {
