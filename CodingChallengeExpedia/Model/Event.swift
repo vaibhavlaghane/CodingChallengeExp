@@ -24,6 +24,7 @@ class Event: NSObject {
     var imageData: UIImage?
     var isImageDownloaded: ImageDownLoadState = .new
     public private(set) var imageURL: URL? = nil
+    public private(set) var detailImageURL: URL? = nil
     
     public private(set) var imagelink: String?{
         didSet{
@@ -33,11 +34,17 @@ class Event: NSObject {
         }
     }
     
+//    convenience override init() {
+//        self.init()
+//        self.name = "event"
+//    }
+    
     init(name: String?,
         location: String?,
         date: Date?,
         formattedDate: String?,
-        imagelink: String?)
+        imagelink: String?,
+        detailImageLink: String? )
         {
             self.name = name ?? "";
             self.location = location ?? "";
@@ -45,6 +52,9 @@ class Event: NSObject {
             self.formattedDate = formattedDate ?? "";
             if(imagelink != nil ){
                 imageURL = URL.init(string: imagelink!)
+            }
+            if(detailImageLink != nil ){
+                detailImageURL = URL.init(string: detailImageLink!)
             }
     }
 }

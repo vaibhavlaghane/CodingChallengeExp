@@ -99,12 +99,14 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         if let cell = cellP {
             // Configure the cell...
             if (indexPath.row < searchEventList.count){
+                
                 let evnt: Event = searchEventList[indexPath.row]
                 cell.title.text = evnt.name ?? ""
                 cell.venue.text = evnt.location ?? ""
                 cell.date.text = evnt.formattedDate ?? ""
                 if ( evnt.imageData != nil ){
-                cell.imageEvent.image =    evnt.imageData
+                    cell.imageEvent.image =    evnt.imageData
+                    cell.imageEvent.setRadius(radius: 8.0)
                 }
             }
             return cell
@@ -119,6 +121,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         detailsScrVC.venue = event.location ?? ""
         detailsScrVC.date = event.formattedDate ?? ""
         detailsScrVC.isFavoriteEvent = false;//
+        detailsScrVC.eventDetails = event 
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
          detailsScrVC.setupParameters() ;
     }
@@ -155,7 +158,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         var searchedArray  = [Event]()
         for curEvent in eventList
         {
-            let eventString:String = curEvent.name as! String 
+            let eventString = curEvent.name as! String
             let compareString = eventString.prefix(substring.count)
             if let substringRange :Range<String.Index> = compareString.range(of: substring){
                 if (!(substringRange.isEmpty) ){searchedArray.append(curEvent)}

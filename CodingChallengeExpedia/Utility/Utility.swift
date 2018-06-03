@@ -104,23 +104,36 @@ class Utility: NSObject {
                 let state : String  = venueDict[Venue.state]  as? String ?? ""
                 let perDict   = performers[0]
                 var imageURL = ""
+                
                 if( perDict [ Performer.image] != nil && !(perDict[ Performer.image] is NSNull )){
                 if let imageStr: String = perDict[Performer.image]! as! String{
-                    imageURL = imageStr
+                        imageURL = imageStr
+                    }
                 }
+                var detailImageURL = imageURL
+                
+                if let imagesDict =  perDict[Performer.images] as! Dictionary<String,  Any>?{
+                    if( imagesDict[Images.huge] != nil){
+                        detailImageURL = imagesDict[Images.huge] as! String
+                    }else if( imagesDict[Images.large] != nil){
+                        detailImageURL = imagesDict[Images.large] as! String
+                    }else if( imagesDict[Images.medium] != nil){
+                        detailImageURL = imagesDict[Images.medium] as! String
+                    }else if( imagesDict[Images.large] != nil){
+                        detailImageURL = imagesDict[Images.small] as! String
+                    }
                 }
                // let country: String = venueDict[Venue.country]  as!  String
                // let stats = event[EventDetails.stats] ?? ""
                 let title = event[EventDetails.title]  as? String ?? ""
-                let url:String  = event[EventDetails.url] as? String ?? ""
+                let _:String  = event[EventDetails.url] as? String ?? ""
                 let location = city + "," + state
-                let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: imageURL)
+                let eventD = Event(name: title, location: location, date: Date(), formattedDate: dateTimeUTC, imagelink: imageURL, detailImageLink: detailImageURL)
                 events.append(eventD)
             }
         }
         return events
     }
-    
     
     class func showAlertMessage(_ message: String, withTitle title: String, onClick completion: @escaping () -> Void) {
         let alert = UIAlertController(title: " \(title)", message: message, preferredStyle: .alert)

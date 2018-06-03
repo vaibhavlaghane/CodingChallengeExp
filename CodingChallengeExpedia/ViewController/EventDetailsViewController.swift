@@ -40,13 +40,13 @@ class EventDetailsViewController: UIViewController {
     var date : String = "" ;
     var venue : String  = "" ;
     var isFavoriteEvent = false;
+    var eventDetails = Event(name: "", location: "", date: Date() , formattedDate: "", imagelink: "", detailImageLink: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
-        eventImage.layer.cornerRadius = 0.8
         
         if (isFavoriteEvent){
             favoriteButton.filled = true
@@ -90,17 +90,15 @@ class EventDetailsViewController: UIViewController {
         eventVenue.text = venue
         eventDate.text = date
         eventTitleLabel.text = eventName
-        eventImage.layer.cornerRadius = 0.8
-        
+        eventImage.setRadius(radius: 8.0)
+        if  let imagURL = eventDetails.detailImageURL  {
+            if let  imageData =   try? Data(contentsOf: imagURL){
+                let imageUI = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    self.eventImage.image = imageUI
+                }
+            }
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

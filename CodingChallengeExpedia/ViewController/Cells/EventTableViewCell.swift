@@ -18,10 +18,6 @@ class EventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        imageEvent.layer.cornerRadius = 0.8
-        //imageEvent.clipsToBounds = true
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,5 +25,6 @@ class EventTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     
 }
