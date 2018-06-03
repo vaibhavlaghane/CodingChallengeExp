@@ -25,5 +25,10 @@ class EventTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
+    func fillColor(){
+        favoriteIcon.filled = true
+        DispatchQueue.main.async {
+            self.favoriteIcon.draw(self.favoriteIcon.frame)
+        }
+    }
 }

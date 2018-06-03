@@ -140,18 +140,21 @@ class Utility: NSObject {
         return events
     }
     
+    /// get date in text display format
+    ///
+    /// - Parameter dateStr: input date string
+    /// - Returns: user friendly date string 
     static func getDateString( _ dateStr: String? ) -> String {
         guard let string = dateStr else{return  ""}
-    //let string =  dateStr ??  "2017-01-27T18:36:36"
-    let dateFormatter = DateFormatter()
-    let tempLocale = dateFormatter.locale // save locale temporarily
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-    let date = dateFormatter.date(from: string)!
-    dateFormatter.dateFormat = "EEE, dd MMM yyyy, HH:mm  a"
-    dateFormatter.locale = tempLocale // reset the locale
-    let dateString = dateFormatter.string(from: date)
-    print("EXACT_DATE : \(dateString)")
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale // save locale temporarily
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let date = dateFormatter.date(from: string)!
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy, HH:mm  a"
+        dateFormatter.locale = tempLocale // reset the locale
+        let dateString = dateFormatter.string(from: date)
+        print("EXACT_DATE : \(dateString)")
         return dateString
     }
     

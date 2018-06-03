@@ -97,6 +97,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 }
                 if(checkFavorite(evnt.iD)){
                     DispatchQueue.main.async {
+                        cell.fillColor()
                         cell.favoriteIcon.isHidden = false
                     }
                 }else{
@@ -104,6 +105,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                         cell.favoriteIcon.isHidden = true
                     }
                 }
+                
             }
             return cell
         }
@@ -123,6 +125,7 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
         
         self.configureChildViewController(childController: detailsScrVC, onView: self.view)
          detailsScrVC.setupParameters() ;
+        
     }
  
     //Mark - searchBar delegate methos
