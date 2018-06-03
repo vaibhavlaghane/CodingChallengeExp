@@ -55,6 +55,8 @@ class NetworkOperationManager: NSObject {
         switch (event.isImageDownloaded) {
         case .new:
             startDownloadImage(event: event, index: index)
+        case .failed:
+            startDownloadImage(event: event, index: index)
         default:
             NSLog("do nothing")
         }

@@ -87,6 +87,7 @@
             <connections>
                 <outlet property="date" destination="zLl-wr-xho" id="Xph-yJ-wye"/>
                 <outlet property="favoriteIcon" destination="Mdf-f7-mVe" id="A8K-od-7rr"/>
+                <outlet property="imageEvent" destination="jF3-yK-dRG" id="P7X-XT-Mqm"/>
                 <outlet property="title" destination="Hma-kN-VDM" id="stH-jy-AOt"/>
                 <outlet property="venue" destination="LAb-ut-pWi" id="35I-Ce-cLE"/>
             </connections>

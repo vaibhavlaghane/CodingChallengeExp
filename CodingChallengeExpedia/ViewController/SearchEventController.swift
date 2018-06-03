@@ -103,6 +103,9 @@ class SearchEventController: UIViewController, UITableViewDelegate,UITableViewDa
                 cell.title.text = evnt.name ?? ""
                 cell.venue.text = evnt.location ?? ""
                 cell.date.text = evnt.formattedDate ?? ""
+                if ( evnt.imageData != nil ){
+                cell.imageEvent.image =    evnt.imageData
+                }
             }
             return cell
         }

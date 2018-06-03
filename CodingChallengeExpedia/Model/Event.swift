@@ -43,8 +43,8 @@ class Event: NSObject {
             self.location = location ?? "";
             self.date = (date ?? nil)! ;
             self.formattedDate = formattedDate ?? "";
-            if( self.imagelink != nil ){
-                imageURL = URL.init(string: self.imagelink!)
+            if(imagelink != nil ){
+                imageURL = URL.init(string: imagelink!)
             }
     }
 }

@@ -18,6 +18,9 @@ class EventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        imageEvent.layer.cornerRadius = 0.8
+        //imageEvent.clipsToBounds = true
         // Initialization code
     }
 

@@ -53,7 +53,6 @@ class EventDetailsViewController: UIViewController {
             DispatchQueue.main.async {
                 self.favoriteButton.draw(self.favoriteButton.frame)
             }
-            
         }
     }
     
